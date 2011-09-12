@@ -2,8 +2,13 @@
 $page = 'index';
 $title = 'Home';
 require_once 'system/config.php';
-require_once 'system/modules/System.class.php';
-require_once 'system/modules/News.class.php';
+require_once 'system/Classes/Autoloader.Class.php';
+$autoLoad = new Autoloader("system/Classes/", "system/Interfaces/");
+$autoLoad->setClassSuffix(".Class");
+$autoLoad->setInterfaceSuffix(".Interface");
+function _autoLoad($class_name){
+	$autoLoad->autoLoad($class_name);
+}
 $system = new System($INFO['sql_host'], $INFO['sql_user'], $INFO['sql_pass'], $INFO['sql_database'], $INFO['sql_site_tnl_prefix']);
 $news = new News($INFO['sql_host'], $INFO['sql_user'], $INFO['sql_pass'], $INFO['sql_database'], $INFO['sql_site_tnl_prefix']);
 $system->pageViews($page, $_SERVER['REMOTE_ADDR']);
