@@ -88,23 +88,25 @@ class Autoloader{
 	}
 	
 	public function autoLoad($sName){
+		$sInterface = $this->sInterfacePath + $this->sInterfacePrefix + $sName + $this->sInterfaceSuffix + $sthis->InterfaceExtension;
+		$sClass = $this->sClassPath + $this->sClassPrefix + $sName + $this->sClassSuffix + $this->sClassExtension;
 		try{
-			if($bLoadClassesFirst){
-				include_once($sClassPath + $sClassPrefix + $sName + $sClassSuffix + $sClassExtension);
+			if($this->bLoadClassesFirst){
+				include_once($sClass);
 				return;
 			}
 			else{
-				include_once($sInterfacePath + $sInterfacePrefix + $sName + $sInterfaceSuffix + $sInterfaceExtension);
+				include_once($sInterface);
 				return;
 			}
 		}
 		catch(Exception $e){
 			if($bLoadClassesFirst){
-				include_once($sInterfacePath + $sInterfacePrefix + $sName + $sInterfaceSuffix + $sInterfaceExtension);
+				include_once($sInterface);
 				return;
 			}
 			else{
-				include_once($sClassPath + $sClassPrefix + $sName + $sClassSuffix + $sClassExtension);
+				include_once($sClass);
 				return;
 			}
 		}

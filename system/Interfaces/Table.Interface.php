@@ -2,7 +2,6 @@
 
 interface Table{
 	
-	
 	public function sGetColumnPrefix();
 	
 	public function setColumnPrefix($sColumnPrefix);
@@ -15,6 +14,8 @@ interface Table{
 	public function removeRow($oRow);
 	public function setRow($oRow);
 	public function oGetRow($oRow);
+	
+	public function iCount();
 	
 }
 

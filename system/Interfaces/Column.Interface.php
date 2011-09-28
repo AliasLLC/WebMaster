@@ -10,6 +10,8 @@ interface Column{
 	public function sGetLimit();
 	public function sGetName();
 	
+	public function iGetLimit();
+	
 }
 
 ?>
