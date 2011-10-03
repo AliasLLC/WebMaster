@@ -25,25 +25,57 @@ if ($page_num_max > $or_comments_count){
 	$max = true;
 }
 ?>
-<?php if ($page_num == '0'){ ?>First | <?php } else { ?>
-<a href="#comments" onclick="comment_paging_rating('1', '<?php echo $category; ?>', '<?php echo $article_id; ?>')">First</a> | <?php } ?>
+<?php if ($page_num == '0'){ ?>
+First |
+<?php } else { ?>
+<a href="#comments"
+	onclick="comment_paging_rating('1', '<?php echo $category; ?>', '<?php echo $article_id; ?>')">First</a>
+|
+<?php } ?>
 
-<?php if ($page_num == '0'){ ?>Previous | <?php } else { ?>
-<a href="#comments" onclick="comment_paging_rating('<?php echo $page_num2-1; ?>', '<?php echo $category; ?>', '<?php echo $article_id; ?>')">Previous</a> | <?php } ?>
+<?php if ($page_num == '0'){ ?>
+Previous |
+<?php } else { ?>
+<a href="#comments"
+	onclick="comment_paging_rating('<?php echo $page_num2-1; ?>', '<?php echo $category; ?>', '<?php echo $article_id; ?>')">Previous</a>
+|
+<?php } ?>
 
-<?php echo $page_num+1; ?> - <?php echo $page_num_max; ?> of <?php echo $or_comments_count; ?> | 
+<?php echo $page_num+1; ?>
+-
+<?php echo $page_num_max; ?>
+of
+<?php echo $or_comments_count; ?>
+|
 
-<?php if ($max == TRUE){ ?>Next | <?php } else { ?>
-<a href="#comments" onclick="comment_paging_rating('<?php echo $page_num2+1; ?>', '<?php echo $category; ?>', '<?php echo $article_id; ?>')">Next</a> | <?php } ?>
+<?php if ($max == TRUE){ ?>
+Next |
+<?php } else { ?>
+<a href="#comments"
+	onclick="comment_paging_rating('<?php echo $page_num2+1; ?>', '<?php echo $category; ?>', '<?php echo $article_id; ?>')">Next</a>
+|
+<?php } ?>
 
-<?php if ($max == TRUE){ ?>Last<?php } else { ?>
-<a href="#comments" onclick="comment_paging_rating('<?php echo $comments_count; ?>', '<?php echo $category; ?>', '<?php echo $article_id; ?>')">Last</a><?php } ?>
-<br /><br />
-					<ul>
-                    <?php while($comment = mysql_fetch_array( $comments )) { ?>
-						<li>
-                        <?php if($comment['avatar_type'] == "") { ?>
-							<img src="/forums/public/style_images/master/profile/default_thumb.png" alt="User Avatar" title="Avatar" class="left commenter-avatar" />
+<?php if ($max == TRUE){ ?>
+Last
+<?php } else { ?>
+<a href="#comments"
+	onclick="comment_paging_rating('<?php echo $comments_count; ?>', '<?php echo $category; ?>', '<?php echo $article_id; ?>')">Last</a>
+	<?php } ?>
+<br />
+<br />
+<ul>
+
+
+<?php while($comment = mysql_fetch_array( $comments )) { ?>
+	<li>
+	<?php if($comment['avatar_type'] == "") { ?> <img
+		src="/forums/public/style_images/master/profile/default_thumb.png"
+		alt="User Avatar" title="Avatar" class="left commenter-avatar" />
+	
+	
+	
+	
                         <?php } elseif($comment['avatar_type'] == "upload")  { ?>
 							<img src="/forums/uploads/<?php echo $comment['avatar_location']; ?>" alt="User Avatar" title="Avatar" class="left commenter-avatar" height="50px" width="50px" />
                         <?php } else { ?>
@@ -76,5 +108,9 @@ if ($page_num_max > $or_comments_count){
 								</ul>                          
 							</div>
 						</li>
+	
+	
+	
+	
                     <?php } ?>
 					</ul>

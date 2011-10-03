@@ -1,9 +1,9 @@
 <?php
 
 abstract class GenericRow implements Row{
-	
+
 	private $iPointer;
-	
+
 	public function iGetPointer(){
 		return $this->iPointer;
 	}
@@ -19,7 +19,7 @@ abstract class GenericRow implements Row{
 	public function previousPointer(){
 		$this->iPointer--;
 	}
-	
+
 }
 
 ?>

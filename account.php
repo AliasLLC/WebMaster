@@ -1,52 +1,78 @@
 <?php
-	// Basic page setup
-	$page = 'account';
-	$title = 'Your Profile';
-	$description = '';
-	$keywords = '';
-	$link = 'account.php';
-	
-	// Grab passthroughs
-	$accountPage = $_GET['page'];
-	
-	// Set up specific page
-	if($accountPage == NULL) {
-		$accountPage = 'profile';
-	} elseif($accountPage == 'profile') {
-		
-	} elseif($accountPage == 'settings') {
-		$title = 'Your Account Settings';
-	} elseif($accountPage == 'transactions') { 
-		$title = 'Your Account Transactions';
-	}
-	
-	// Include(s)
-	require_once('assets/inc/global.php');
-	require_once 'system/config.php';
-	require_once 'system/modules/System.class.php';
-	$system = new System($INFO['sql_host'], $INFO['sql_user'], $INFO['sql_pass'], $INFO['sql_database'], $INFO['sql_site_tnl_prefix']);
-	$system->pageViews($page, $_SERVER['REMOTE_ADDR']);
+// Basic page setup
+$page = 'account';
+$title = 'Your Profile';
+$description = '';
+$keywords = '';
+$link = 'account.php';
+
+// Grab passthroughs
+$accountPage = $_GET['page'];
+
+// Set up specific page
+if($accountPage == NULL) {
+	$accountPage = 'profile';
+} elseif($accountPage == 'profile') {
+
+} elseif($accountPage == 'settings') {
+	$title = 'Your Account Settings';
+} elseif($accountPage == 'transactions') {
+	$title = 'Your Account Transactions';
+}
+
+// Include(s)
+require_once('assets/inc/global.php');
+require_once 'system/config.php';
+require_once 'system/modules/System.class.php';
+$system = new System($INFO['sql_host'], $INFO['sql_user'], $INFO['sql_pass'], $INFO['sql_database'], $INFO['sql_site_tnl_prefix']);
+$system->pageViews($page, $_SERVER['REMOTE_ADDR']);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+
+
 <?php include('assets/tpl/head.php'); echo "\n"; ?>
 </head>
 <body>
+
+
 <?php include('assets/tpl/header.php'); echo "\n"; ?>
+
+
 <?php include('assets/tpl/navigation.php'); echo "\n"; ?>
 	<div id="container">
 		<div class="padding">
-<?php include('assets/tpl/sidebar.php'); echo "\n"; ?>
+			
+			
+		<?php include('assets/tpl/sidebar.php'); echo "\n"; ?>
 			<div id="content">
 				<div id="account">
 					<ul class="tabs">
-						<li <?php if($accountPage == 'profile') { ?>class="active"<?php } ?>><a href="?page=profile" title="Your Profile">Your Profile</a></li>
-						<li <?php if($accountPage == 'settings') { ?>class="active"<?php } ?>><a href="?page=settings" title="Settings">Settings</a></li>
-						<li <?php if($accountPage == 'transactions') { ?>class="active"<?php } ?>><a href="?page=transactions" title="Transactions">Transactions</a></li>
+						<li   <?php if($accountPage == 'profile') { ?> class="active"
+							
+						<?php } ?>><a href="?page=profile" title="Your Profile">Your
+								Profile</a></li>
+						<li   <?php if($accountPage == 'settings') { ?> class="active"
+							
+						<?php } ?>><a href="?page=settings" title="Settings">Settings</a>
+						</li>
+						<li   <?php if($accountPage == 'transactions') { ?> class="active"
+							
+						<?php } ?>><a href="?page=transactions" title="Transactions">Transactions</a>
+						</li>
 					</ul>
-					<img src="http://services.runescape.com/m=avatar-rs/avatar.png?id=7872978" class="character-face" width="26" height="26" alt="RuneScape Avatar" />
-					<h1>Yost <span class="karma positive" title="Karma score">125</span></h1>
+					<img
+						src="http://services.runescape.com/m=avatar-rs/avatar.png?id=7872978"
+						class="character-face" width="26" height="26"
+						alt="RuneScape Avatar" />
+					<h1>
+						Yost <span class="karma positive" title="Karma score">125</span>
+					</h1>
+					
+					
+					
+					
 					<?php if($accountPage == 'profile') { ?>
 					<div class="info-box">
 						<div class="close">Hide</div>
@@ -137,10 +163,18 @@
 					<?php } ?>
 				</div>
 			</div>
+			
+			
+			
+			
 			<?php leaderboardBottom(); ?>
 		</div>
 		<div class="clear"></div>
 	</div>
+	
+	
+	
+	
 <?php include('assets/tpl/footer.php'); echo "\n"; ?>
 </body>
 </html>

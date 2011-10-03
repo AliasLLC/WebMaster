@@ -27,7 +27,7 @@ class System {
 			$this->con->query("INSERT INTO `".$this->tbl_prefix."pageviews` (`page_id`, `lastip`, `views`) VALUES ('".$page."', '".$ip."', 1)");
 		}
 	}
-	
+
 	function fetchLatestthread() {
 		return $this->con->query("SELECT * FROM `ipb_topics` ORDER BY `start_date` DESC LIMIT 5");
 	}

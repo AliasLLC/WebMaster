@@ -25,8 +25,10 @@ $system->pageViews($page, $_SERVER['REMOTE_ADDR']);
 <link type="image/x-icon" rel="shortcut icon" href="favicon.ico" />
 
 <link type="text/css" rel="stylesheet" href="assets/css/main.css" />
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
 <script type="text/javascript" src="assets/js/jquery.uniform.min.js"></script>
 <script type="text/javascript" src="assets/js/global.js"></script>
 <script type="text/javascript">
@@ -46,9 +48,15 @@ $system->pageViews($page, $_SERVER['REMOTE_ADDR']);
 	<div id="bar">
 		<div class="padding">
 			<ul>
-				<li><a href="http://127.0.0.1/Projects/In-Progress/MyRuneLog/account.php" title="My Account">My Account</a></li>
-				<li><a href="http://127.0.0.1/Projects/In-Progress/MyRuneLog/support.php" title="Help">Help</a></li>
-				<li><a href="http://127.0.0.1/Projects/In-Progress/MyRuneLog/logout.php" title="Log Out">Log Out</a></li>
+				<li><a
+					href="http://127.0.0.1/Projects/In-Progress/MyRuneLog/account.php"
+					title="My Account">My Account</a></li>
+				<li><a
+					href="http://127.0.0.1/Projects/In-Progress/MyRuneLog/support.php"
+					title="Help">Help</a></li>
+				<li><a
+					href="http://127.0.0.1/Projects/In-Progress/MyRuneLog/logout.php"
+					title="Log Out">Log Out</a></li>
 			</ul>
 		</div>
 	</div>
@@ -71,6 +79,10 @@ $system->pageViews($page, $_SERVER['REMOTE_ADDR']);
 		</div>
 	</div>
 	<div class="separator"></div>
+	
+	
+	
+	
 	<?php require_once 'assets/tpl/navigation.php'; ?>
 	<div id="container">
 		<div class="padding">

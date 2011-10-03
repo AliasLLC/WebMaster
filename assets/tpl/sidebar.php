@@ -23,7 +23,8 @@
 			<span>Most Recent Threads</span>
 		</h3>
 		<ol>
-		<?php 
+			
+		<?php
 		$query = $system->fetchLatestthread();
 		while ($result = $query->fetch_assoc()) {
 			echo '<li>"<a href="forums/topic/'.$result['tid'].'-'.$result['title_seo'].'/">'.ucwords($result['title']).'</a>" by <a href="forums/user/'.$result['starter_id'].'-'.$result['seo_first_name'].'/">'.$result['last_poster_name'].'</a></li>';
@@ -48,11 +49,9 @@
 			<form>
 				<ol>
 					<li><input type="radio" id="option-1" name="options" value="Yes" />
-						<label for="option-1">Yes</label>
-					</li>
+						<label for="option-1">Yes</label></li>
 					<li><input type="radio" id="option-2" name="options" value="No" />
-						<label for="option-2">No</label>
-					</li>
+						<label for="option-2">No</label></li>
 				</ol>
 				<input type="submit" id="submit" name="submit" value="View Results" />
 			</form>
@@ -70,7 +69,8 @@
 				allowTransparency="true"></iframe>
 		</div>
 		<div id="stats">
-			<h5><?php echo $system->getPageViews($page); ?></h5>
+			<h5>
+			<?php echo $system->getPageViews($page); ?></h5>
 			<p>
 				Unique views<br />for this page
 			</p>

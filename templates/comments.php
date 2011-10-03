@@ -1,26 +1,46 @@
-				<h1 class="heading" id="comments-heading">
-					<div class="right">
-                    <?php if($or_comments_count != 0){ ?>
-						<form>
-							<select onchange="comment_order(this.value, '<?php echo $article['article_category']; ?>', '<?php echo $view_id; ?>');">
-								<option value="comment_paging" selected="selected">Most Recent</option>
-								<option value="comment_paging_rating">Most Popular</option>
-							</select>
-						</form>
+
+<h1 class="heading" id="comments-heading">
+	<div class="right">
+
+
+	<?php if($or_comments_count != 0){ ?>
+		<form>
+			<select
+				onchange="comment_order(this.value, '<?php echo $article['article_category']; ?>', '<?php echo $view_id; ?>');">
+				<option value="comment_paging" selected="selected">Most Recent</option>
+				<option value="comment_paging_rating">Most Popular</option>
+			</select>
+		</form>
+		
+		
+		
+		
                       <?php } ?>
 					</div>
-					Comments
-				</h1>
-				<div id="comments">
-<div id="comments_container">
-<div id="comment_container">
-<?php if($or_comments_count == 0){
-	echo "<p><i>There are currently no comments posted on this page!</i></p><br />";
-} else { ?>
-First | Previous | 1 - <?php echo $page_num_max; ?> of <?php echo $or_comments_count; ?> | 
-<?php if ($max == TRUE){ ?>Next | <?php } else { ?>
-<a href="#comments" onclick="comment_paging('2', '<?php echo $article['article_category']; ?>', '<?php echo $view_id; ?>')">Next</a> | 
-<?php } ?>
+	Comments
+</h1>
+<div id="comments">
+	<div id="comments_container">
+		<div id="comment_container">
+			
+			
+		<?php if($or_comments_count == 0){
+			echo "<p><i>There are currently no comments posted on this page!</i></p><br />";
+		} else { ?>
+			First | Previous | 1 -
+			<?php echo $page_num_max; ?>
+			of
+			<?php echo $or_comments_count; ?>
+			|
+			<?php if ($max == TRUE){ ?>
+			Next |
+			<?php } else { ?>
+			<a href="#comments"
+				onclick="comment_paging('2', '<?php echo $article['article_category']; ?>', '<?php echo $view_id; ?>')">Next</a>
+			|
+			<?php } ?>
+			
+			
 <?php if ($max == TRUE){ ?>Last<?php } else { ?>
 <a href="#comments" onclick="comment_paging('<?php echo $comments_count; ?>', '<?php echo $article['article_category']; ?>', '<?php echo $view_id; ?>')">Last</a>
 <?php } ?>
@@ -66,9 +86,11 @@ First | Previous | 1 - <?php echo $page_num_max; ?> of <?php echo $or_comments_c
 					</ul>
 <?php } ?>
 </div>
-</div>
-                    
-<!-- Comment form -->
+	</div>
+
+	<!-- Comment form -->
+	
+	
 <?php if($settings['members_comment'] == '1'){ ?>
 <a name="message"></a>
 <?php if ($error == TRUE){ ?>

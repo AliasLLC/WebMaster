@@ -1,8 +1,5 @@
 NOTES:
  - Please use CamelCase when possible.
- - Also because PHP has no visible data types, with the exception of an array, please use Hungarian notation for both functions, vars, and constants.
-   - When a function is of void datatype, returns nothing or has no return, please omit the Hungarian notation prefix.
-   - When not using a primitive dataype such as a custom class please use the Hungarian notation of 'o' to denote its an object datatype.
    
 Thanks,
 

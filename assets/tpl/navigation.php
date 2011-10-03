@@ -11,13 +11,20 @@
 			<a href="donate.php" title="Donate">Donate</a>
 		</div>
 		<ul>
-			<li <?php if ($page == 'index') { echo 'class="active"'; } ?>><a href="index.php" title="Home">Home</a></li>
-			<li><a href="forums/" title="Community">Community</a></li>
+			<li  <?php if ($page == 'index') { echo 'class="active"'; } ?>><a
+				href="index.php" title="Home">Home</a>
+			</li>
+			<li><a href="forums/" title="Community">Community</a>
+			</li>
 			<!--<li ><a href="pros.php" title="Find a Pro">Find a Pro</a></li>-->
-			<li><a href="guides.php" title="Guides">Guides</a></li>
-			<li><a href="tools.php" title="Tools">Tools</a></li>
-			<li><a href="media.php" title="Media">Media</a></li>
-			<li><a href="teamspeak.php" title="TeamSpeak">TeamSpeak</a></li>
+			<li><a href="guides.php" title="Guides">Guides</a>
+			</li>
+			<li><a href="tools.php" title="Tools">Tools</a>
+			</li>
+			<li><a href="media.php" title="Media">Media</a>
+			</li>
+			<li><a href="teamspeak.php" title="TeamSpeak">TeamSpeak</a>
+			</li>
 		</ul>
 	</div>
 </div>
