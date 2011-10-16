@@ -3,6 +3,8 @@
 /**
  * Represents a Row in a Table containing Cells
  * @author Devon R.K. McAvoy
+ * @version 0.1.2 10/3/11
+ * @since 0.1 9/12/11
  *
  */
 interface Row{

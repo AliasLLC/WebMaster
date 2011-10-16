@@ -3,6 +3,8 @@
 /**
  * Represents a Column in a Table
  * @author Devon R.K. McAvoy
+ * @version 0.1.2 10/3/11
+ * @since 0.1 9/12/11
  *
  */
 interface Column{
@@ -13,26 +15,16 @@ interface Column{
 	 */
 	public function setDataType($dataType);
 	/**
-	 * Sets the data type limit
-	 * @param int $limit
+	 * Sets the alias of the Column
+	 * @param string $alias
 	 */
-	public function setLimit($limit);
-	/**
-	 * Sets the name of the Column
-	 * @param string $name
-	 */
-	public function setName($name);
+	public function setAlias($alias);
 
 	/**
 	 * Returns the DataType
 	 * @return DataType
 	 */
 	public function getDataType();
-	/**
-	 * Returns the data type limit
-	 * @return int
-	 */
-	public function getLimit();
 	/**
 	 * Returns the Name of Column
 	 * @return string

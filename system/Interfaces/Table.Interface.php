@@ -3,9 +3,17 @@
 /**
  * Represents a table within a database containing rows and columns
  * @author Devon R.K. McAvoy
+ * @version 0.1.2 10/8/11
+ * @since 0.1 9/12/11
  *
  */
 interface Table{
+	
+	/**
+	 * Gets the tables name
+	 * @return string
+	 */
+	public function getTableName();
 
 	/**
 	 * Gets the column prefix in this table
