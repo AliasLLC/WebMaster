@@ -33,6 +33,12 @@ interface DataType{
 	public function getLimit();
 	
 	/**
+	 * Gets the name of this datatype
+	 * @return string
+	 */
+	public function getName();
+	
+	/**
 	 * Returns whether the limiting factor is the number characters or digits in a value
 	 * @return boolean
 	 */
@@ -56,7 +62,6 @@ interface DataType{
 	 * @return boolean
 	 */
 	public function isValid($val);
-	
 	
 
 }

@@ -2,11 +2,12 @@
 
 class GenericDataType implements DataType{
 	
+	private $name;
 	private $len;
 	private $format;
 	private $lim;
 	
-	public function GenericDataType($format = "/^.*$/", $lim = "regex", $len = 0){
+	public function GenericDataType($name, $format = "/^.*$/", $lim = "regex", $len = 0){
 		$this->format = $format;
 		$this->lim = $lim;
 		$this->len = $len;
@@ -22,6 +23,10 @@ class GenericDataType implements DataType{
 	
 	public function getLimit(){
 		return $this->lim;
+	}
+	
+	public function getName(){
+		return $this->name;
 	}
 	
 	public function isCharacterLimit(){

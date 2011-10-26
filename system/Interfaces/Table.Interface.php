@@ -32,6 +32,8 @@ interface Table{
 	 * @param Column $col
 	 */
 	public function addColumn($col);
+	
+	public function insertColumn($before, $col);
 	/**
 	 * Deletes the column from the table
 	 * @param Column $col
@@ -65,13 +67,6 @@ interface Table{
 	 * @return Row
 	 */
 	public function selectRow($row);
-
-	/**
-	 * Counts the entries in the column;
-	 * @param Column $col
-	 * @return int
-	 */
-	public function count($col);
 
 }
 

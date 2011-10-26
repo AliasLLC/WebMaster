@@ -14,11 +14,6 @@ interface Column{
 	 * @param DataType $dataType
 	 */
 	public function setDataType($dataType);
-	/**
-	 * Sets the alias of the Column
-	 * @param string $alias
-	 */
-	public function setAlias($alias);
 
 	/**
 	 * Returns the DataType
