@@ -66,7 +66,18 @@ class GenericTable implements Table{
 		}
 	}
 	public function alterColumn( $col ){
-		
+		$key = -1;
+		foreach( $this->columns as $i -> $j)
+		{
+			if( $j->getName() == $col->getName() )
+			{
+				$key = $i;
+			}
+		}
+		if( $key >= 0 )
+		{
+			$this->columns[ $key ] = $col;
+		}
 	}
 	
 	public function insertRow( $row );
