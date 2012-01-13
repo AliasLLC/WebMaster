@@ -8,6 +8,6 @@ binding.
 
 *Required
 -------------------------------------------------------------------------------
-NAME*				DATE (MONTH dd, yyy)*		ENTITY REPRESENTING								
+NAME*                     DATE (MONTH dd, yyy)*             ENTITY REPRESENTING								
 -------------------------------------------------------------------------------
-Harley J. Dishon		1/13/12				MyRuneLog.com
+Harley J. Dishon          1/13/12                                 MyRuneLog.com
