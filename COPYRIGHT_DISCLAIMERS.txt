@@ -1,0 +1,12 @@
+By adding your full legal name and a timestamp of the current local date and 
+time in the requested format, at the time of agreement, to the list below, you 
+and any entity that you represent and have the ability to bind to a legal 
+document, hereby disclaims all copyright interest in the software “WebMaster”
+as written by Alias Host LLC. and contributors. You also agree that your full 
+legal name and the timestamp represent your legal signature and is legally 
+binding.
+
+*Required
+-------------------------------------------------------------------------------
+NAME*					DATE (MONTH dd, yyy)*				ENTITY REPRESENTING								
+-------------------------------------------------------------------------------
