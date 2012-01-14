@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Package xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_sfZPgT4vEeGgk6mWJL-1iA" name="WebMaster" visibility="package">
+  <packagedElement xmi:type="uml:Package" xmi:id="_0sCg0D4vEeGgk6mWJL-1iA" name="Models" visibility="private">
+    <packagedElement xmi:type="uml:Package" xmi:id="_6ziDgD4vEeGgk6mWJL-1iA" name="UML" visibility="private"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_GqcAED4wEeGgk6mWJL-1iA" name="System" visibility="package">
+    <packagedElement xmi:type="uml:Package" xmi:id="_LAI1AD4wEeGgk6mWJL-1iA" name="Kernel" visibility="package">
+      <packagedElement xmi:type="uml:Package" xmi:id="_phlPAD45EeGgk6mWJL-1iA" name="Module" visibility="package">
+        <packagedElement xmi:type="uml:Interface" xmi:id="_UCdaAD5EEeGgk6mWJL-1iA" name="Module" isLeaf="true">
+          <ownedOperation xmi:id="_s3Q-ID5JEeG_oIAvhnySWw" name="getFileNames"/>
+          <ownedOperation xmi:id="_4WQxAD5JEeG_oIAvhnySWw" name="getFiles"/>
+          <ownedOperation xmi:id="_NU_0wD5KEeG_oIAvhnySWw" name="load"/>
+          <ownedOperation xmi:id="_Q0bwED5KEeG_oIAvhnySWw" name="getName"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_fZN24D5EEeGgk6mWJL-1iA" name="GenericModule" clientDependency="_52xucD5-EeGKq7Y0r4NcqA" isActive="true">
+          <ownedAttribute xmi:id="_eaIwwD5KEeG_oIAvhnySWw" name="Name" visibility="private"/>
+          <ownedAttribute xmi:id="_6KWIUD5KEeG_oIAvhnySWw" name="Files" visibility="private"/>
+          <interfaceRealization xmi:id="_52xucD5-EeGKq7Y0r4NcqA" supplier="_UCdaAD5EEeGgk6mWJL-1iA" client="_fZN24D5EEeGgk6mWJL-1iA"/>
+          <ownedOperation xmi:id="_BKDFYD5LEeG_oIAvhnySWw" name="getName" redefinedOperation="_Q0bwED5KEeG_oIAvhnySWw"/>
+          <ownedOperation xmi:id="_IepWwD5_EeGKq7Y0r4NcqA" name="getFileNames" redefinedOperation="_s3Q-ID5JEeG_oIAvhnySWw"/>
+          <ownedOperation xmi:id="_OP7Y4D5_EeGKq7Y0r4NcqA" name="getFiles" redefinedOperation="_4WQxAD5JEeG_oIAvhnySWw"/>
+          <ownedOperation xmi:id="_hZKTkD5_EeGKq7Y0r4NcqA" name="load" redefinedOperation="_NU_0wD5KEeG_oIAvhnySWw"/>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_s2D3gD45EeGgk6mWJL-1iA" name="Log" visibility="package"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_vHXLwD45EeGgk6mWJL-1iA" name="Database" visibility="package">
+        <packagedElement xmi:type="uml:Package" xmi:id="_9rWZoD45EeGgk6mWJL-1iA" name="SQL" visibility="package">
+          <packagedElement xmi:type="uml:Package" xmi:id="_drr3sT48EeGgk6mWJL-1iA" name="MySQL" visibility="package"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_x86ckD45EeGgk6mWJL-1iA" name="Text" visibility="package">
+          <packagedElement xmi:type="uml:Package" xmi:id="_0SKcsD45EeGgk6mWJL-1iA" name="XML" visibility="package">
+            <packagedElement xmi:type="uml:Package" xmi:id="_s2qI4D5DEeGgk6mWJL-1iA" name="HTML" visibility="package"/>
+          </packagedElement>
+          <packagedElement xmi:type="uml:Package" xmi:id="_7JJioD45EeGgk6mWJL-1iA" name="YAML" visibility="package"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_zKpJ0T7PEeGPQvQidIrDRw" name="Database"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_3722ED7PEeGPQvQidIrDRw" name="Server"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_KETCID7QEeGPQvQidIrDRw" name="ServerListener"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_Vo9YID7QEeGPQvQidIrDRw" name="Table"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_-OLVsD5AEeGgk6mWJL-1iA" name="Cache" visibility="package"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_KmNjAD45EeGgk6mWJL-1iA" name="Configuration" visibility="package"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_TtA10D5BEeGgk6mWJL-1iA" name="Cache" visibility="package"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_ATEjcD4yEeGgk6mWJL-1iA" name="Log" visibility="package">
+    <packagedElement xmi:type="uml:Package" xmi:id="_Ih8CUD4yEeGgk6mWJL-1iA" name="Archive" visibility="package">
+      <packagedElement xmi:type="uml:Package" xmi:id="_OPk6kD4yEeGgk6mWJL-1iA" name="System" visibility="package"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_lAE5ED5BEeGgk6mWJL-1iA" name="User">
+        <packagedElement xmi:type="uml:Package" xmi:id="_lAE5Ez5BEeGgk6mWJL-1iA" name="Module" visibility="package"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="__WLDED5BEeGgk6mWJL-1iA" name="Root">
+        <packagedElement xmi:type="uml:Package" xmi:id="_iXrmwD5-EeGKq7Y0r4NcqA" name="Module"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_L-EyAD4yEeGgk6mWJL-1iA" name="System" visibility="package"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_d4XPgD5BEeGgk6mWJL-1iA" name="User" visibility="package">
+      <packagedElement xmi:type="uml:Package" xmi:id="_gpq5gj5BEeGgk6mWJL-1iA" name="Module" visibility="package"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_9Gjw4D5BEeGgk6mWJL-1iA" name="Root" visibility="package">
+      <packagedElement xmi:type="uml:Package" xmi:id="_fMs4gD5-EeGKq7Y0r4NcqA" name="Module"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_9zk-AD44EeGgk6mWJL-1iA" name="User" visibility="package">
+    <packagedElement xmi:type="uml:Package" xmi:id="_AvZO4D45EeGgk6mWJL-1iA" name="Upload" visibility="package"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_P1pcUD45EeGgk6mWJL-1iA" name="Download" visibility="package"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_SPr10D45EeGgk6mWJL-1iA" name="Module" visibility="package"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_XFxhYD5BEeGgk6mWJL-1iA" name="Cache" visibility="package"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_YTSwsD5-EeGKq7Y0r4NcqA" name="Configuration"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_0Lc3ED5BEeGgk6mWJL-1iA" name="Root" visibility="package">
+    <packagedElement xmi:type="uml:Package" xmi:id="_5QAWED5BEeGgk6mWJL-1iA" name="Cache" visibility="package"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_TL1usD5-EeGKq7Y0r4NcqA" name="Module"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_bqZPYD5-EeGKq7Y0r4NcqA" name="Configuration"/>
+  </packagedElement>
+</uml:Package>
