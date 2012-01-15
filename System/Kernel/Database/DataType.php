@@ -25,18 +25,81 @@
 * including the MIT license.
 */
 
+/**
+ * Represents a DataType in a database
+ * @author Devon R.K. McAvoy
+ * @since 0.0.1
+ *
+ */
 interface DataType
 {
+	/**
+	 * Type constant for DataTypes that are numeric
+	 * @var int
+	 */
 	const NUMERIC = 0;
+	/**
+	 * Type constant for DataTypes that are strings
+	 * @var int
+	 */
 	const STRING = 1;
+	/**
+	 * Type constant for DataTypes that are binary objects/strings
+	 * @var int
+	 */
 	const BINARY = 2;
+	/**
+	 * Type constant for DataTypes that are unicode strings
+	 * @var int
+	 */
 	const UNICODE = 3;
+	/**
+	 * Type constant for DataTypes that are date/time objects
+	 * @var int
+	 */
 	const DATE = 4;
+	/**
+	 * Type constant for DataTypes that are of unspecified type
+	 * @var int
+	 */
 	const OTHER = 5;
 	
+	/**
+	 * Returns the name of the DataType
+	 * 
+	 * @return SplString name of the DataType
+	 */
 	public function getName();
+	
+	/**
+	 * Returns the type constant of the DataType
+	 * 
+	 * @return SplInt the type constant of the DataType
+	 */
 	public function getType();
+	
+	/**
+	 * Returns the regular expression that regulates length, characters, and pattern of the DataType
+	 * 
+	 * @return SplString the regulating regular expression
+	 */
 	public function getRegularExpression();
-	public function getLength();
+	
+	/**
+	 * Returns the maximum size in bytes of binary objects or other types that are limited by size
+	 * 
+	 * A size of 0 is interpreted as no maximum size
+	 * 
+	 * @return SplInt maximum size in bytes of the type
+	 */
+	public function getSize();
+	
+	/**
+	 * Returns true if of type NUMERIC and is unsigned, only positive numbers
+	 * 
+	 * Unsinged types can store larger values than their signed counterparts
+	 * 
+	 * @return SplBool true if DataType is an unsigned NUMERIC type
+	 */
 	public function isUnsigned();
 }
