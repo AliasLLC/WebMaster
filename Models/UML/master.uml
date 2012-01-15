@@ -23,6 +23,17 @@
               <body>@return SplString name of the module</body>
             </ownedComment>
           </ownedOperation>
+          <ownedOperation xmi:id="_z_uUoD-0EeGahoKbckrnkw" name="isLoaded">
+            <ownedComment xmi:id="_z_uUoT-0EeGahoKbckrnkw">
+              <body>Require each file inside of a try, catch block so we can log the error</body>
+            </ownedComment>
+            <ownedComment xmi:id="_z_uUoj-0EeGahoKbckrnkw">
+              <body>@throws Exception</body>
+            </ownedComment>
+            <ownedComment xmi:id="_z_uUoz-0EeGahoKbckrnkw">
+              <body>@return SplBool whether or not files in the module loaded correctly</body>
+            </ownedComment>
+          </ownedOperation>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_fZN24D5EEeGgk6mWJL-1iA" name="GenericModule" clientDependency="_52xucD5-EeGKq7Y0r4NcqA" isActive="true">
           <ownedAttribute xmi:id="_eaIwwD5KEeG_oIAvhnySWw" name="Name" visibility="private">
@@ -57,6 +68,17 @@
             <ownedParameter xmi:id="_GCxd4D8GEeGPQvQidIrDRw" name="files"/>
           </ownedOperation>
           <ownedOperation xmi:id="_V_Zv8D7VEeGPQvQidIrDRw" name="__destruct"/>
+          <ownedOperation xmi:id="_4tcA8D-0EeGahoKbckrnkw" name="isLoaded">
+            <ownedComment xmi:id="_4tcA8T-0EeGahoKbckrnkw">
+              <body>Require each file inside of a try, catch block so we can log the error</body>
+            </ownedComment>
+            <ownedComment xmi:id="_4tcA8j-0EeGahoKbckrnkw">
+              <body>@throws Exception</body>
+            </ownedComment>
+            <ownedComment xmi:id="_4tcA8z-0EeGahoKbckrnkw">
+              <body>@return SplBool whether or not files in the module loaded correctly</body>
+            </ownedComment>
+          </ownedOperation>
         </packagedElement>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_s2D3gD45EeGgk6mWJL-1iA" name="Log" visibility="package"/>
@@ -80,7 +102,7 @@
               <body>Constant</body>
             </ownedComment>
             <ownedComment xmi:id="_uJl3sD8EEeGPQvQidIrDRw">
-              <body>@var SplInt</body>
+              <body>@var int</body>
             </ownedComment>
           </ownedAttribute>
           <ownedAttribute xmi:id="_7rZ24D8EEeGPQvQidIrDRw" name="STRING" isStatic="true">
@@ -88,7 +110,7 @@
               <body>Constant</body>
             </ownedComment>
             <ownedComment xmi:id="_7rad8T8EEeGPQvQidIrDRw">
-              <body>@var SplInt</body>
+              <body>@var int</body>
             </ownedComment>
           </ownedAttribute>
           <ownedAttribute xmi:id="_AlLpQD8FEeGPQvQidIrDRw" name="BINARY" isStatic="true">
@@ -96,7 +118,7 @@
               <body>Constant</body>
             </ownedComment>
             <ownedComment xmi:id="_AlLpQj8FEeGPQvQidIrDRw">
-              <body>@var SplInt</body>
+              <body>@var int</body>
             </ownedComment>
           </ownedAttribute>
           <ownedAttribute xmi:id="_JCksUD8FEeGPQvQidIrDRw" name="UNICODE" isStatic="true">
@@ -104,7 +126,7 @@
               <body>Constant</body>
             </ownedComment>
             <ownedComment xmi:id="_JCksUj8FEeGPQvQidIrDRw">
-              <body>@var SplInt</body>
+              <body>@var int</body>
             </ownedComment>
           </ownedAttribute>
           <ownedAttribute xmi:id="_LfurQD8FEeGPQvQidIrDRw" name="DATE" isStatic="true">
@@ -112,7 +134,7 @@
               <body>Constant</body>
             </ownedComment>
             <ownedComment xmi:id="_LfurQj8FEeGPQvQidIrDRw">
-              <body>@var SplInt</body>
+              <body>@var int</body>
             </ownedComment>
           </ownedAttribute>
           <ownedAttribute xmi:id="_Pe4ocD8FEeGPQvQidIrDRw" name="OTHER" isStatic="true">
@@ -120,7 +142,7 @@
               <body>Constant</body>
             </ownedComment>
             <ownedComment xmi:id="_Pe4ocj8FEeGPQvQidIrDRw">
-              <body>@var SplInt</body>
+              <body>@var int</body>
             </ownedComment>
           </ownedAttribute>
           <ownedOperation xmi:id="_XRTZgD7REeGPQvQidIrDRw" name="getType">

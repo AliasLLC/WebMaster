@@ -26,37 +26,63 @@
 */
 
 /**
- * Represents a WebMaster Module, which may or maynot be loaded
+ * The Database Module in charge of all database interactions
  * @author Devon R.K. McAvoy
  * @since 0.0.1
- *
  */
-interface Module{
-	
-	/**
-	 * Get the name of the module
-	 * 
-	 * @return SplString
-	 */
-	public function getName();
-	
-	/**
-	 * Attempts to load the files associated with the module
-	 * 
-	 * Returns true if the module has been loaded successfully
-	 * 
-	 * @throws Exception on failure to read a file specified for any reason
-	 * 
-	 * @return SplBool true if the module loaded without any errors
-	 */
-	public function load();
-	
-	/**
-	 * Returns true if the module has been loaded successfully
-	 * 
-	 * @return SplBool
-	 */
-	public function isLoaded();
-}
 
-?>
+class DatabaseModule extends GenericModule
+{
+
+	/**
+	 * Name of the Database Module
+	 * 
+	 * @var string
+	 */
+	private $name = "DatabaseModule";
+	/**
+	 * Version of the Database Module
+	 * 
+	 * @var string
+	 */
+	private $version = "0.0.1";
+	
+	/**
+	 * Files to be loaded in order by the Database Module
+	 * 
+	 * @var array
+	 */
+	private $files = array(
+						"DataType.php"
+						);
+	
+	/**
+	 * Default constructor for the Database Module
+	 * 
+	 * Sets up the Database Module
+	 * 
+	 * @return
+	 */
+	public function __construct()
+	{
+		$queue = new SplQueue();
+		foreach($files as $i)
+		{
+			$queue->enqueue(new SplString($i));
+		}
+		parent::__construct(new SplString("{$name} {$version}"), $queue);
+	}
+	
+	/**
+	 * Named cosntructor for the database Module
+	 * 
+	 * Sets up the Database Module
+	 * 
+	 * @return
+	 */
+	public function DatabaseModule()
+	{
+		$this->__construct();
+	}
+	
+}

@@ -25,38 +25,18 @@
 * including the MIT license.
 */
 
-/**
- * Represents a WebMaster Module, which may or maynot be loaded
- * @author Devon R.K. McAvoy
- * @since 0.0.1
- *
- */
-interface Module{
+interface DataType
+{
+	const NUMERIC = 0;
+	const STRING = 1;
+	const BINARY = 2;
+	const UNICODE = 3;
+	const DATE = 4;
+	const OTHER = 5;
 	
-	/**
-	 * Get the name of the module
-	 * 
-	 * @return SplString
-	 */
 	public function getName();
-	
-	/**
-	 * Attempts to load the files associated with the module
-	 * 
-	 * Returns true if the module has been loaded successfully
-	 * 
-	 * @throws Exception on failure to read a file specified for any reason
-	 * 
-	 * @return SplBool true if the module loaded without any errors
-	 */
-	public function load();
-	
-	/**
-	 * Returns true if the module has been loaded successfully
-	 * 
-	 * @return SplBool
-	 */
-	public function isLoaded();
+	public function getType();
+	public function getRegularExpression();
+	public function getLength();
+	public function isUnsigned();
 }
-
-?>
