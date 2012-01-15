@@ -7,19 +7,56 @@
     <packagedElement xmi:type="uml:Package" xmi:id="_LAI1AD4wEeGgk6mWJL-1iA" name="Kernel" visibility="package">
       <packagedElement xmi:type="uml:Package" xmi:id="_phlPAD45EeGgk6mWJL-1iA" name="Module" visibility="package">
         <packagedElement xmi:type="uml:Interface" xmi:id="_UCdaAD5EEeGgk6mWJL-1iA" name="Module" isLeaf="true">
-          <ownedOperation xmi:id="_s3Q-ID5JEeG_oIAvhnySWw" name="getFileNames"/>
-          <ownedOperation xmi:id="_4WQxAD5JEeG_oIAvhnySWw" name="getFiles"/>
-          <ownedOperation xmi:id="_NU_0wD5KEeG_oIAvhnySWw" name="load"/>
-          <ownedOperation xmi:id="_Q0bwED5KEeG_oIAvhnySWw" name="getName"/>
+          <ownedOperation xmi:id="_NU_0wD5KEeG_oIAvhnySWw" name="load">
+            <ownedComment xmi:id="_Iu4nAD7TEeGPQvQidIrDRw">
+              <body>Require each file inside of a try, catch block so we can log the error</body>
+            </ownedComment>
+            <ownedComment xmi:id="_w7emwD7TEeGPQvQidIrDRw">
+              <body>@throws Exception</body>
+            </ownedComment>
+            <ownedComment xmi:id="_0yTHUD7TEeGPQvQidIrDRw">
+              <body>@return SplBool whether or not files in the module loaded correctly</body>
+            </ownedComment>
+          </ownedOperation>
+          <ownedOperation xmi:id="_Q0bwED5KEeG_oIAvhnySWw" name="getName">
+            <ownedComment xmi:id="_3SZFgD7TEeGPQvQidIrDRw">
+              <body>@return SplString name of the module</body>
+            </ownedComment>
+          </ownedOperation>
         </packagedElement>
         <packagedElement xmi:type="uml:Class" xmi:id="_fZN24D5EEeGgk6mWJL-1iA" name="GenericModule" clientDependency="_52xucD5-EeGKq7Y0r4NcqA" isActive="true">
-          <ownedAttribute xmi:id="_eaIwwD5KEeG_oIAvhnySWw" name="Name" visibility="private"/>
-          <ownedAttribute xmi:id="_6KWIUD5KEeG_oIAvhnySWw" name="Files" visibility="private"/>
+          <ownedAttribute xmi:id="_eaIwwD5KEeG_oIAvhnySWw" name="Name" visibility="private">
+            <ownedComment xmi:id="_HCuxwD7UEeGPQvQidIrDRw">
+              <body>@var SplString</body>
+            </ownedComment>
+          </ownedAttribute>
+          <ownedAttribute xmi:id="_6KWIUD5KEeG_oIAvhnySWw" name="Files" visibility="private">
+            <ownedComment xmi:id="_IPEpED7UEeGPQvQidIrDRw">
+              <body>@var SplQueue</body>
+            </ownedComment>
+          </ownedAttribute>
           <interfaceRealization xmi:id="_52xucD5-EeGKq7Y0r4NcqA" supplier="_UCdaAD5EEeGgk6mWJL-1iA" client="_fZN24D5EEeGgk6mWJL-1iA"/>
-          <ownedOperation xmi:id="_BKDFYD5LEeG_oIAvhnySWw" name="getName" redefinedOperation="_Q0bwED5KEeG_oIAvhnySWw"/>
-          <ownedOperation xmi:id="_IepWwD5_EeGKq7Y0r4NcqA" name="getFileNames" redefinedOperation="_s3Q-ID5JEeG_oIAvhnySWw"/>
-          <ownedOperation xmi:id="_OP7Y4D5_EeGKq7Y0r4NcqA" name="getFiles" redefinedOperation="_4WQxAD5JEeG_oIAvhnySWw"/>
-          <ownedOperation xmi:id="_hZKTkD5_EeGKq7Y0r4NcqA" name="load" redefinedOperation="_NU_0wD5KEeG_oIAvhnySWw"/>
+          <ownedOperation xmi:id="_BKDFYD5LEeG_oIAvhnySWw" name="getName" redefinedOperation="_Q0bwED5KEeG_oIAvhnySWw">
+            <ownedComment xmi:id="_8swccD7TEeGPQvQidIrDRw">
+              <body>@return SplString name of the module</body>
+            </ownedComment>
+          </ownedOperation>
+          <ownedOperation xmi:id="_hZKTkD5_EeGKq7Y0r4NcqA" name="load" redefinedOperation="_NU_0wD5KEeG_oIAvhnySWw">
+            <ownedComment xmi:id="_9Y0RMD7TEeGPQvQidIrDRw">
+              <body>Require each file inside of a try, catch block so we can log the error</body>
+            </ownedComment>
+            <ownedComment xmi:id="_9Y0RMT7TEeGPQvQidIrDRw">
+              <body>@throws Exception</body>
+            </ownedComment>
+            <ownedComment xmi:id="_9Y0RMj7TEeGPQvQidIrDRw">
+              <body>@return SplBool whether or not files in the module loaded correctly</body>
+            </ownedComment>
+          </ownedOperation>
+          <ownedOperation xmi:id="_PhHd4D7VEeGPQvQidIrDRw" name="__construct">
+            <ownedParameter xmi:id="_FEDL0D8GEeGPQvQidIrDRw" name="name"/>
+            <ownedParameter xmi:id="_GCxd4D8GEeGPQvQidIrDRw" name="files"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_V_Zv8D7VEeGPQvQidIrDRw" name="__destruct"/>
         </packagedElement>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_s2D3gD45EeGgk6mWJL-1iA" name="Log" visibility="package"/>
@@ -35,8 +72,103 @@
         </packagedElement>
         <packagedElement xmi:type="uml:Interface" xmi:id="_zKpJ0T7PEeGPQvQidIrDRw" name="Database"/>
         <packagedElement xmi:type="uml:Interface" xmi:id="_3722ED7PEeGPQvQidIrDRw" name="Server"/>
-        <packagedElement xmi:type="uml:Interface" xmi:id="_KETCID7QEeGPQvQidIrDRw" name="ServerListener"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_KETCID7QEeGPQvQidIrDRw" name="ServerObserver"/>
         <packagedElement xmi:type="uml:Interface" xmi:id="_Vo9YID7QEeGPQvQidIrDRw" name="Table"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_OIKqwD7REeGPQvQidIrDRw" name="DataType">
+          <ownedAttribute xmi:id="_jSjcsD8EEeGPQvQidIrDRw" name="NUMERIC" isStatic="true">
+            <ownedComment xmi:id="_pwKZUD8EEeGPQvQidIrDRw">
+              <body>Constant</body>
+            </ownedComment>
+            <ownedComment xmi:id="_uJl3sD8EEeGPQvQidIrDRw">
+              <body>@var SplInt</body>
+            </ownedComment>
+          </ownedAttribute>
+          <ownedAttribute xmi:id="_7rZ24D8EEeGPQvQidIrDRw" name="STRING" isStatic="true">
+            <ownedComment xmi:id="_7rad8D8EEeGPQvQidIrDRw">
+              <body>Constant</body>
+            </ownedComment>
+            <ownedComment xmi:id="_7rad8T8EEeGPQvQidIrDRw">
+              <body>@var SplInt</body>
+            </ownedComment>
+          </ownedAttribute>
+          <ownedAttribute xmi:id="_AlLpQD8FEeGPQvQidIrDRw" name="BINARY" isStatic="true">
+            <ownedComment xmi:id="_AlLpQT8FEeGPQvQidIrDRw">
+              <body>Constant</body>
+            </ownedComment>
+            <ownedComment xmi:id="_AlLpQj8FEeGPQvQidIrDRw">
+              <body>@var SplInt</body>
+            </ownedComment>
+          </ownedAttribute>
+          <ownedAttribute xmi:id="_JCksUD8FEeGPQvQidIrDRw" name="UNICODE" isStatic="true">
+            <ownedComment xmi:id="_JCksUT8FEeGPQvQidIrDRw">
+              <body>Constant</body>
+            </ownedComment>
+            <ownedComment xmi:id="_JCksUj8FEeGPQvQidIrDRw">
+              <body>@var SplInt</body>
+            </ownedComment>
+          </ownedAttribute>
+          <ownedAttribute xmi:id="_LfurQD8FEeGPQvQidIrDRw" name="DATE" isStatic="true">
+            <ownedComment xmi:id="_LfurQT8FEeGPQvQidIrDRw">
+              <body>Constant</body>
+            </ownedComment>
+            <ownedComment xmi:id="_LfurQj8FEeGPQvQidIrDRw">
+              <body>@var SplInt</body>
+            </ownedComment>
+          </ownedAttribute>
+          <ownedAttribute xmi:id="_Pe4ocD8FEeGPQvQidIrDRw" name="OTHER" isStatic="true">
+            <ownedComment xmi:id="_Pe4ocT8FEeGPQvQidIrDRw">
+              <body>Constant</body>
+            </ownedComment>
+            <ownedComment xmi:id="_Pe4ocj8FEeGPQvQidIrDRw">
+              <body>@var SplInt</body>
+            </ownedComment>
+          </ownedAttribute>
+          <ownedOperation xmi:id="_XRTZgD7REeGPQvQidIrDRw" name="getType">
+            <ownedComment xmi:id="_r2bGkD7VEeGPQvQidIrDRw">
+              <body>@return SplInt</body>
+            </ownedComment>
+          </ownedOperation>
+          <ownedOperation xmi:id="_cNx6kD7REeGPQvQidIrDRw" name="getName">
+            <ownedComment xmi:id="_Sd27AD8FEeGPQvQidIrDRw">
+              <body>@return SplString</body>
+            </ownedComment>
+          </ownedOperation>
+          <ownedOperation xmi:id="_f76ZMD7REeGPQvQidIrDRw" name="getRegularExpression">
+            <ownedComment xmi:id="_VriX8D8FEeGPQvQidIrDRw">
+              <body>@return SplString</body>
+            </ownedComment>
+          </ownedOperation>
+          <ownedOperation xmi:id="_prsRMD7REeGPQvQidIrDRw" name="isUnsigned">
+            <ownedComment xmi:id="_XBca8D8FEeGPQvQidIrDRw">
+              <body>@return SplBool</body>
+            </ownedComment>
+          </ownedOperation>
+          <ownedOperation xmi:id="_hzUKQD7SEeGPQvQidIrDRw" name="getLength">
+            <ownedComment xmi:id="_W5s0MD8FEeGPQvQidIrDRw">
+              <body>@return SplInt</body>
+            </ownedComment>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_Q0ixcD7REeGPQvQidIrDRw" name="Column">
+          <ownedOperation xmi:id="_gVPhkD8FEeGPQvQidIrDRw" name="getName"/>
+          <ownedOperation xmi:id="_j7P-8D8FEeGPQvQidIrDRw" name="setName">
+            <ownedParameter xmi:id="_DPEnMD8GEeGPQvQidIrDRw" name="name"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_lmlfYD8FEeGPQvQidIrDRw" name="getDataType"/>
+          <ownedOperation xmi:id="_oX8MsD8FEeGPQvQidIrDRw" name="setDataType">
+            <ownedParameter xmi:id="_B_BUkD8GEeGPQvQidIrDRw" name="dataType" type="_OIKqwD7REeGPQvQidIrDRw"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_rD8f8D8FEeGPQvQidIrDRw" name="isValid">
+            <ownedParameter xmi:id="_zHvXQD8FEeGPQvQidIrDRw" name="value">
+              <defaultValue xmi:type="uml:LiteralString" xmi:id="_5pDvMD8FEeGPQvQidIrDRw" value="null"/>
+            </ownedParameter>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_cu7_gD7UEeGPQvQidIrDRw" name="DatabaseModule">
+          <generalization xmi:id="_fg-z4D7VEeGPQvQidIrDRw" general="_fZN24D5EEeGgk6mWJL-1iA"/>
+          <ownedOperation xmi:id="_btmo4D7VEeGPQvQidIrDRw" name="__construct"/>
+          <ownedOperation xmi:id="_btmo4T7VEeGPQvQidIrDRw" name="__destruct"/>
+        </packagedElement>
       </packagedElement>
       <packagedElement xmi:type="uml:Package" xmi:id="_-OLVsD5AEeGgk6mWJL-1iA" name="Cache" visibility="package"/>
     </packagedElement>
