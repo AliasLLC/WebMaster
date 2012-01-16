@@ -65,7 +65,7 @@ Credits
 -------
   * [PHP](http://php.net) - and everyone else who has contributed to PHP.
   * Harley Dishon and [MyRuneLog Community](http://myrunelog.com/forums) - for sponsoring the 
-	MyRuneLog Development Team
+	creation of WebMaster and providing MyRuneLog's Development Team
   * David Schiehsl - for the great idea
   * All the people behind SPL_Types and [phpDocumentor](http://www.phpdocs.org)
   * [Spout Development Team](http://www.spout.org) - for coming up with a great license.
