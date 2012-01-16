@@ -26,67 +26,33 @@
 */
 
 /**
- * @package Kernel
- * @subpackage Database
- * @copyright Alias Host 2012
- */
+* @package Kernel
+* @subpackage Database
+* @copyright Alias Host 2012
+*/
 
 /**
- * The Database Module in charge of all database interactions
- * @author Devon R.K. McAvoy
+ * Represents a Table in a database
+ * @author Devon R.K. McAvoy <arrorn@dev.myrunelog.com>
  * @since 0.0.1
+ * @version 0.0.1
  */
 
-class DatabaseModule extends GenericModule
+interface Table
 {
-
-	/**
-	 * Name of the Database Module
-	 * 
-	 * @var string
-	 */
-	private $name = "DatabaseModule";
-	/**
-	 * Version of the Database Module
-	 * 
-	 * @var string
-	 */
-	private $version = "0.0.1";
+	const UNIQUE = 0;
+	const PRIMARY_KEY = 1;
+	const FOREIGN_KEY = 2;
+	const CHECK = 3;
 	
-	/**
-	 * Files to be loaded in order by the Database Module
-	 * 
-	 * @var array
-	 */
-	private $files = array(
-						"DataType.php",
-						"Column.php",
-						"Table.php"
-						);
+	const ALL = array("*");
 	
-	/**
-	 * Default constructor for the Database Module
-	 * 
-	 * Sets up the Database Module
-	 */
-	public function __construct()
-	{
-		$queue = new SplQueue();
-		foreach($files as $i)
-		{
-			$queue->enqueue(new SplString($i));
-		}
-		parent::__construct(new SplString("{$name} {$version}"), $queue);
-	}
-	
-	/**
-	 * Named cosntructor for the database Module
-	 * 
-	 * Sets up the Database Module
-	 */
-	public function DatabaseModule()
-	{
-		$this->__construct();
-	}
-	
+	public function select(ArrayObject $columns);
+	public function getColumn(SplString $name);
+	public function getColumns();
+	public function setAutoIncrement(SplInt $increment);
+	public function addColumn(Column $column);
+	public function addConstraint($type, ArrayObject $columns, SplString $name = null, ArrayObject $conditions = null);
+	public function dropColumn(Column $column);
+	public function dropConstraint(SplString $name);
 }

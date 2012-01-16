@@ -185,7 +185,6 @@
               <body>@return SplInt</body>
             </ownedComment>
           </ownedOperation>
-          <ownedOperation xmi:id="_NqHs4D_OEeGahoKbckrnkw" name="allowsNull"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Interface" xmi:id="_Q0ixcD7REeGPQvQidIrDRw" name="Column">
           <ownedOperation xmi:id="_gVPhkD8FEeGPQvQidIrDRw" name="getName"/>

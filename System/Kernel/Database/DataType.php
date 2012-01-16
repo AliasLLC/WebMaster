@@ -108,11 +108,4 @@ interface DataType
 	 * @return SplBool true if DataType is an unsigned NUMERIC type
 	 */
 	public function isUnsigned();
-	
-	/**
-	 * Returns true if the DataType allows null values
-	 * 
-	 * @return SplBool true if DataType allows null values
-	 */
-	public function allowsNull();
 }
