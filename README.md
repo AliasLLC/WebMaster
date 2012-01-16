@@ -51,7 +51,7 @@ To install SPL_Types 0.4.0-dev please use the following commands after installin
   * Then add the following line to your `php.ini` file, located in `/etc` or the php
 		install directory specified upon compilation, using your favority text editor
   * `extension = spl_types.so`
-	*Restart your PHP service
+  * Restart your PHP service
 	
 Documentation
 --------------
