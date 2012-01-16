@@ -26,10 +26,16 @@
 */
 
 /**
+ * @package Kernel
+ * @subpackage Module
+ * @copyright Alias Host 2012
+ */
+
+/**
  * Represents a generic WebMaster Module that can be loaded
  * @author Devon R.K. McAvoy
  * @since 0.0.1
- *
+ * @version 0.0.1
  */
 class GenericModule implements Module
 {

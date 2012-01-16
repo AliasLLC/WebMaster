@@ -26,10 +26,16 @@
 */
 
 /**
+ * @package Kernel
+ * @subpackage Database
+ * @copyright Alias Host 2012
+ */
+
+/**
  * Represents a DataType in a database
- * @author Devon R.K. McAvoy
+ * @author Devon R.K. McAvoy <arrorn@dev.myrunelog.com>
  * @since 0.0.1
- *
+ * @version 0.0.1
  */
 interface DataType
 {
@@ -102,4 +108,11 @@ interface DataType
 	 * @return SplBool true if DataType is an unsigned NUMERIC type
 	 */
 	public function isUnsigned();
+	
+	/**
+	 * Returns true if the DataType allows null values
+	 * 
+	 * @return SplBool true if DataType allows null values
+	 */
+	public function allowsNull();
 }

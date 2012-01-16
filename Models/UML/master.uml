@@ -95,7 +95,22 @@
         <packagedElement xmi:type="uml:Interface" xmi:id="_zKpJ0T7PEeGPQvQidIrDRw" name="Database"/>
         <packagedElement xmi:type="uml:Interface" xmi:id="_3722ED7PEeGPQvQidIrDRw" name="Server"/>
         <packagedElement xmi:type="uml:Interface" xmi:id="_KETCID7QEeGPQvQidIrDRw" name="ServerObserver"/>
-        <packagedElement xmi:type="uml:Interface" xmi:id="_Vo9YID7QEeGPQvQidIrDRw" name="Table"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_Vo9YID7QEeGPQvQidIrDRw" name="Table">
+          <ownedOperation xmi:id="_1IRPED_KEeGahoKbckrnkw" name="addColumn">
+            <ownedParameter xmi:id="_a7x3kD_LEeGahoKbckrnkw" name="column" type="_Q0ixcD7REeGPQvQidIrDRw"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_8qYVoD_KEeGahoKbckrnkw" name="dropColumn">
+            <ownedParameter xmi:id="_fpY2MD_LEeGahoKbckrnkw" name="column" type="_Q0ixcD7REeGPQvQidIrDRw"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_AcANID_LEeGahoKbckrnkw" name="alterColumn">
+            <ownedParameter xmi:id="_QqHagD_LEeGahoKbckrnkw" name="name"/>
+            <ownedParameter xmi:id="_WdK-QD_LEeGahoKbckrnkw" name="column" type="_Q0ixcD7REeGPQvQidIrDRw"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_DizmAD_LEeGahoKbckrnkw" name="getColumns"/>
+          <ownedOperation xmi:id="_HuhYgD_LEeGahoKbckrnkw" name="getColumn">
+            <ownedParameter xmi:id="_M03AMD_LEeGahoKbckrnkw" name="name"/>
+          </ownedOperation>
+        </packagedElement>
         <packagedElement xmi:type="uml:Interface" xmi:id="_OIKqwD7REeGPQvQidIrDRw" name="DataType">
           <ownedAttribute xmi:id="_jSjcsD8EEeGPQvQidIrDRw" name="NUMERIC" isStatic="true">
             <ownedComment xmi:id="_pwKZUD8EEeGPQvQidIrDRw">
@@ -165,11 +180,12 @@
               <body>@return SplBool</body>
             </ownedComment>
           </ownedOperation>
-          <ownedOperation xmi:id="_hzUKQD7SEeGPQvQidIrDRw" name="getLength">
+          <ownedOperation xmi:id="_hzUKQD7SEeGPQvQidIrDRw" name="getSize">
             <ownedComment xmi:id="_W5s0MD8FEeGPQvQidIrDRw">
               <body>@return SplInt</body>
             </ownedComment>
           </ownedOperation>
+          <ownedOperation xmi:id="_NqHs4D_OEeGahoKbckrnkw" name="allowsNull"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Interface" xmi:id="_Q0ixcD7REeGPQvQidIrDRw" name="Column">
           <ownedOperation xmi:id="_gVPhkD8FEeGPQvQidIrDRw" name="getName"/>

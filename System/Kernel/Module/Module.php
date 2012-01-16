@@ -26,17 +26,23 @@
 */
 
 /**
+ * @package Kernel
+ * @subpackage Module
+ * @copyright Alias Host 2012
+ */
+
+/**
  * Represents a WebMaster Module, which may or maynot be loaded
  * @author Devon R.K. McAvoy
  * @since 0.0.1
- *
+ * @version 0.0.1
  */
 interface Module{
 	
 	/**
 	 * Get the name of the module
 	 * 
-	 * @return SplString
+	 * @return SplString the name of the moudule
 	 */
 	public function getName();
 	
@@ -54,7 +60,7 @@ interface Module{
 	/**
 	 * Returns true if the module has been loaded successfully
 	 * 
-	 * @return SplBool
+	 * @return SplBool true if the module has been loaded
 	 */
 	public function isLoaded();
 }
