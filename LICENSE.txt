@@ -1,4 +1,6 @@
 The dual license described in this file is called the Alias License Version 1.
+Based off of the SpoutDev License Version 1 by the Spout Developement Team
+http://www.spout.org
 
 -------------------------------------------------------------------------------
 

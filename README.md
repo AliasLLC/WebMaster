@@ -66,7 +66,7 @@ Credits
 	MyRuneLog Development Team
   * [Alias Host](http://www.aliashost.com) - for allowing us to use their webhosting.
   * All the people behind SPL_Types and [phpDocumentor](http://www.phpdocs.org)
-  * [Spout Development Team] - for comming up with a great license.
+  * [Spout Development Team](http://www.spout.org) - for comming up with a great license.
   
 Copyright
 ---------
