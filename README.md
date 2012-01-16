@@ -22,7 +22,7 @@ WebMaster.
 
 Running
 ---------
-To running WebMaster currently requires
+Running WebMaster currently requires
 
   * PHP 5.3.8 (Untested on other versions)
 	
