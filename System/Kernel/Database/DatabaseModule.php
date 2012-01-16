@@ -26,6 +26,12 @@
 */
 
 /**
+ * @package Kernel
+ * @subpackage DataBase
+ * @copyright Alias Host 2012
+ */
+
+/**
  * The Database Module in charge of all database interactions
  * @author Devon R.K. McAvoy
  * @since 0.0.1
@@ -60,8 +66,6 @@ class DatabaseModule extends GenericModule
 	 * Default constructor for the Database Module
 	 * 
 	 * Sets up the Database Module
-	 * 
-	 * @return
 	 */
 	public function __construct()
 	{
@@ -77,8 +81,6 @@ class DatabaseModule extends GenericModule
 	 * Named cosntructor for the database Module
 	 * 
 	 * Sets up the Database Module
-	 * 
-	 * @return
 	 */
 	public function DatabaseModule()
 	{

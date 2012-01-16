@@ -67,8 +67,6 @@ class GenericModule implements Module
 	 * 
 	 * @param SplString $name Then name of the module
 	 * @param SplQueue $files The files names in the order to be loaded as strings or SplStrings
-	 * 
-	 * @return
 	 */
 	public function __construct(SplString $name,  SplQueue $files)
 	{
@@ -107,8 +105,6 @@ class GenericModule implements Module
 	 * 
 	 * @param SplString $name Then name of the module
 	 * @param SplQueue $files The files names in the order to be loaded as strings or SplStrings
-	 * 
-	 * @return
 	 */
 	public function GenericModule(SplString $name, SplQueue $files)
 	{
@@ -117,8 +113,6 @@ class GenericModule implements Module
 	
 	/**
 	 * Logs the destruction of the module
-	 * 
-	 * @return
 	 */
 	public function __destruct()
 	{
