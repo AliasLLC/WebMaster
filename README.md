@@ -2,7 +2,7 @@ WebMaster
 ============
 Introduction
 --------------
-WebMaster is an open-source all-purpose website content managment system (CMS) that is currently in development by the [Alias Host](http://www.aliashost.com) in partnership with MyRuneLog's Development Team.
+WebMaster is an open-source all-purpose website content managment system (CMS) that is currently in development by [Alias Host](http://www.aliashost.com) in partnership with [MyRuneLog's Development Team](http://www.myrunelog.com/forum/).
 
 Brief History
 ---------------
@@ -65,15 +65,13 @@ Credits
 -------
   * [PHP](http://php.net) - and everyone else who has contributed to PHP.
   * Harley Dishon and [MyRuneLog Community](http://myrunelog.com/forums) - for sponsoring the 
-	MyRuneLog Development Team
+	creation of WebMaster and providing MyRuneLog's Development Team
   * David Schiehsl - for the great idea
   * All the people behind SPL_Types and [phpDocumentor](http://www.phpdocs.org)
   * [Spout Development Team](http://www.spout.org) - for coming up with a great license.
   
 Copyright
 ---------
-WebMaster is open-source software released under the Spout is open-source software released under 
-the LGPLv3 license, but with a provision that files are released under the MIT license 180 days after 
-they are published. Please see the `LICENSE.txt` file for details.
+WebMaster is open-source software released under the Alias License Version 1 which is the LGPLv3 license, but with a provision that files are released under the MIT license 365 days after they are published. Please see the `LICENSE.txt` file for details.
 
 Copyright Disclaimers are described in `COPYRIGHT_DISCLAIMERS.txt`
