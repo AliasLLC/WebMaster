@@ -23,9 +23,11 @@ WebMaster.
 Running
 ---------
 To running WebMaster currently requires
+
   * PHP 5.3.8 (Untested on other versions)
 	
 PHP Extensions:
+
   * SPL Support - Compiled with PHP 5.3.0+
   * SPL_Types 0.4.0-dev - This is an experimental PHP extension, as such some web hosting services may 
 		refuse to install it. We will replace the functionality of this extension by the full release.
