@@ -10,7 +10,7 @@ Originally dreamed up by David Schiehsl as a CMS to bring together several indep
 CMS's and allow them to interface together including [Invision Power Board](http://www.invisionpower.com/)
 and a On-line Radio Control Panel such as [Centova Cast](http://www.centova.com/pages/cast).
 
-It soon developed into something far larger than originally though of as David and a friend, now Lead
+It soon developed into something far larger than originally thought of as David and a friend, now Lead
 Developer Devon McAvoy, realized that it not only had potential to link and utilize information from
 various CMS's it could also be used as CMS in and of itself allow the alteration of website templates
 and other basic website management functions.
