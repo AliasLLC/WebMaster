@@ -72,6 +72,6 @@ Credits
   
 Copyright
 ---------
-WebMaster is open-source software released under the LGPLv3 license, but with a provision that files are released under the MIT license 180 days after they are published. Please see the `LICENSE.txt` file for details.
+WebMaster is open-source software released under the Alias License Version 1 which is the LGPLv3 license, but with a provision that files are released under the MIT license 365 days after they are published. Please see the `LICENSE.txt` file for details.
 
 Copyright Disclaimers are described in `COPYRIGHT_DISCLAIMERS.txt`
