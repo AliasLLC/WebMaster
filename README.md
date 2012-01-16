@@ -2,7 +2,7 @@ WebMaster
 ============
 Introduction
 --------------
-WebMaster is an open-source all-purpose website content managment system (CMS) that is currently in development by the [Alias Host](http://www.aliashost.com) in partnership with MyRuneLog's Development Team.
+WebMaster is an open-source all-purpose website content managment system (CMS) that is currently in development by [Alias Host](http://www.aliashost.com) in partnership with [MyRuneLog's Development Team](http://www.myrunelog.com/forum/).
 
 Brief History
 ---------------
