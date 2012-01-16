@@ -74,4 +74,4 @@ WebMaster is open-source software released under the Spout is open-source softwa
 the LGPLv3 license, but with a provision that files are released under the MIT license 180 days after 
 they are published. Please see the `LICENSE.txt` file for details.
 
-Copyright Disclaimers are described in COPYRIGHT_DISCLAIMERS.txt
+Copyright Disclaimers are described in `COPYRIGHT_DISCLAIMERS.txt`
