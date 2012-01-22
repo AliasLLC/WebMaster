@@ -1,25 +1,34 @@
-The dual license described in this file is called the Alias License Version 1.
-Based off of the SpoutDev License Version 1 by the Spout Developement Team
+                                ALIAS LICENSE
+                          Version 1, 19 January 2012
+
+ Copyright (C) 2012 Alias Host LLC. <http://aliashost.org/>
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document and included licenses without alterations.
+
+Alias Licesne Version 1 is based off of the SpoutDev License Version 1 by the 
+Spout Developement Team.
 http://www.spout.org
 
--------------------------------------------------------------------------------
+------------------------------------------------------------------------------
 
-The software is licensed under the LGPL version 3.0.  
+As used herin, "the Software" refers to any work covered by this license,
+Alias License Version 1.
 
-In addition, the software as it existed no less than 365 days previously, 
-is licensed under the MIT license.  For clarity, files in a state that
+The Software is Licensed under the GNU LGPL Version 3.  
+
+In addition, the Software as it existed no less than 365 days previously, 
+is licensed under the MIT license. For clarity, files in a state that
 includes changes published in the previous 365 days, are licensed under the 
-LGPL V.3 license.  However, files in a state that only includes changes 
+LGPL Version 3. However, files in a state that only includes changes 
 published more than 365 days previously, are licensed under the MIT license.
 
-The LGPL version 3.0 license and the MIT license are provided 
-below.
+The LGPL Version 3 and the MIT license are provided below.
 
--------------------------------------------------------------------------------
--------------------------------------------------------------------------------
-                               LGPL Version 3
--------------------------------------------------------------------------------
--------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                                LGPL Version 3
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
 
                    GNU LESSER GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
@@ -187,11 +196,11 @@ apply, that proxy's public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.
 
--------------------------------------------------------------------------------
--------------------------------------------------------------------------------
-                               MIT License
--------------------------------------------------------------------------------
--------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+                                 MIT License
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
 
 Copyright (C) 2012 Alias Host LLC.
 

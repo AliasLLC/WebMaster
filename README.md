@@ -24,50 +24,26 @@ Running
 ---------
 Running WebMaster currently requires
 
-  * PHP 5.3.8 (Untested on other versions)
-	
-PHP Extensions:
+  * [Play! Framework](http://www.playframework.org/) Version 1.2.4
 
-  * SPL Support - Compiled with PHP 5.3.0+
-  * SPL_Types 0.4.0-dev - This is an experimental PHP extension, as such some web hosting services may 
-		refuse to install it. We will replace the functionality of this extension by the full release.
+The following Play Modules, which can be installed using `play install` followed by the module name and version number
 
-Installation
---------------
-WebMaster is currently in development and cannot install
-
-To install PHP please follow the 
-[PHP Installation and Configuration](http://www.php.net/manual/en/install.php) instructions for your
-system and configuration
-
-To install SPL_Types 0.4.0-dev please use the following commands after installing 
-[Subversion](http://subversion.apache.org/) on your system.
-
-  * Navigate to a temporary directory such as `\tmp`
-  * Then issue the following commands
-  * `svn checkout http://svn.php.net/repository/pecl/spl_types/trunk SPL_Types`
-  * `pecl package SPL_Types/package.xml`
-  * `pecl install SPL_Types-0.3.0.tgz`
-  * Then add the following line to your `php.ini` file, located in `/etc` or the php
-		install directory specified upon compilation, using your favorite text editor
-  * `extension = spl_types.so`
-  * Restart your PHP service
+  * [Scala 0.9.1](http://www.playframework.org/modules/scala)
 	
 Documentation
 --------------
-[phpDocs](http://www.phpdocs.org/) may be generated using the `phpdocs` program in the terminal. 
+[javaDocs](http://www.oracle.com/technetwork/java/javase/documentation/index-jsp-135444.html) may be generated using the `play javadocs` program in the terminal. 
 This may need to be installed on your system.
 
 For documentation on WebMaster se the
-[WebMaster phpDocs](http://pd.dev.myrunelog.com/).
+[WebMaster javaDocs](http://jd.dev.myrunelog.com/WebMaster/latest).
 
 Credits
 -------
-  * [PHP](http://php.net) - and everyone else who has contributed to PHP.
+  * [Java](http://java.com), [Scala](http://www.scala-lang.org/), and [Play!](http://playframework.org/) - and everyone else who has contributed to Java, Scala, and Play!.
   * Harley Dishon and [MyRuneLog Community](http://myrunelog.com/forums) - for sponsoring the 
 	creation of WebMaster and providing MyRuneLog's Development Team
   * David Schiehsl - for the great idea
-  * All the people behind SPL_Types and [phpDocumentor](http://www.phpdocs.org)
   * [Spout Development Team](http://www.spout.org) - for coming up with a great license.
   
 Copyright
