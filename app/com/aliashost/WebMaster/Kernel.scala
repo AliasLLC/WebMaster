@@ -26,6 +26,23 @@
 
 package com.aliashost.WebMaster
 
+import java.io.File
+
 trait Kernel {
-	
+  def getName() : String
+  def getIPBans() : Array[String]
+  def ban( address : String ) : Unit
+  def unban( address : String ) : Boolean
+  def unWhitelist( address : String ) : Boolean
+  def whitelist( address : String ) : Unit
+  def getWhitelistedIPs() : Array[String]
+  def updateWhitelist() : Unit
+  def setWhitelist( whitelist : Boolean ) : Unit
+  def isWhitelist() : Boolean
+  def getConfigDirectory() : File
+  def getLogDirectory() : File
+  def getCacheDirectory() : File
+  def getLogFile() : String
+  def getOps() : Array[String]
+  def bind(address : String, port : String) : Boolean
 }
