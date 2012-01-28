@@ -26,23 +26,5 @@
 
 package com.aliashost.WebMaster.module
 
-import com.aliashost.WebMaster.database.Database
-import com.aliashost.WebMaster.database.Table
-
-class ModuleDescriptionFile extends Database {
-	def getName() : Unit = {
-		
-	}
-	def getTables() : Array[Table]  = {
-		return null
-	}
-	def getTable(name : String) : Table = {
-		return null
-	}
-	def addTable(table : Table) : Boolean = {
-		return false
-	}
-	def dropTable(table : Table) : Boolean = {
-		return false
-	}
+class ModuleDescriptionFile {
 }

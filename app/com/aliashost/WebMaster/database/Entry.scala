@@ -26,5 +26,6 @@
 
 package com.aliashost.WebMaster.database
 
-trait DataType {
+trait Entry {
+	def getName() : String
 }

@@ -29,14 +29,14 @@ package com.aliashost.WebMaster.module
 import com.aliashost.WebMaster.Kernel
 
 trait Module {
-		def onLoad() : Unit
-		def onReload() : Unit
-		def onEnable() : Unit
-		def onDisable() : Unit
-		def setEnabled( enabled : Boolean ) : Unit
-		def isEnabled() : Boolean
-		//def getModuleLoader() : ModuleLoader
-		//def getLogger() : Logger
-		def getDescription() : ModuleDescriptionFile
-		def getKernel() : Kernel
+	def onLoad() : Unit
+	def onReload() : Unit
+	def onEnable() : Unit
+	def onDisable() : Unit
+	def setEnabled( enabled : Boolean ) : Unit
+	def isEnabled() : Boolean
+	//def getModuleLoader() : ModuleLoader
+	//def getLogger() : Logger
+	def getDescription() : ModuleDescriptionFile
+	def getKernel() : Kernel
 }

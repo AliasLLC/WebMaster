@@ -28,6 +28,7 @@ package com.aliashost.WebMaster.database
 
 trait Database {
 	def getName() : Unit
+	def setName(name : String) : Boolean
 	def getTables() : Array[Table]
 	def getTable(name : String) : Table
 	def addTable(table : Table) : Boolean

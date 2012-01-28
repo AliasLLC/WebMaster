@@ -28,4 +28,10 @@ package com.aliashost.WebMaster.database
 
 trait Table {
 	def getName() : String
+	def getDatabase() : Database
+	def canRead() : Boolean
+	def canWrite() : Boolean
+	def isLocked() : Boolean
+	def setLocked( locked : Boolean ) : Boolean
+	def isOwner() : Boolean
 }
