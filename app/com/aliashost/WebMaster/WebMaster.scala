@@ -23,3 +23,58 @@
  * License and see <http://www.aliashost.com/AliasLicenseVersion_1.txt> for the full license,
  * including the MIT license.
  */
+
+package com.aliashost.WebMaster
+
+import com.aliashost.WebMaster.Kernel
+import com.aliashost.WebMaster.System
+import java.io.File
+import play.Logger
+
+class WebMaster extends Kernel with System {
+	override def getName() : String = {
+		return null
+	}
+	override def getIPBans() : Array[String] = {
+		return null
+	}
+	override def ban( address : String ) : Unit = {
+		
+	}
+	override def unban( address : String ) : Boolean = {
+		return false
+	}
+	override def unWhitelist( address : String ) : Boolean = {
+		return false
+	}
+	override def whitelist( address : String ) : Unit = {
+
+	}
+	override def getWhitelistedIPs() : Array[String] = {
+		return null
+	}
+	override def updateWhitelist() : Unit = {
+		
+	}
+	override def setWhitelist( whitelist : Boolean ) : Unit = {
+		
+	}
+	override def isWhitelist() : Boolean = {
+		return false
+	}
+	override def getOps() : Array[String] = {
+		return null
+	}
+	override def getVersion() : String = {
+		return null
+	}
+	override def getConfigDirectory() : File = {
+		return null
+	}
+	override def getLogger() : Logger = {
+		return null
+	}
+	override def bind(address : String, port : String) : Boolean = {
+		return false
+	}
+}

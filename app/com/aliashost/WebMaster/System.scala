@@ -23,3 +23,19 @@
  * License and see <http://www.aliashost.com/AliasLicenseVersion_1.txt> for the full license,
  * including the MIT license.
  */
+
+package com.aliashost.WebMaster
+
+trait System {
+	def getName() : String
+	def getIPBans() : Array[String]
+	def ban( address : String ) : Unit
+	def unban( address : String ) : Boolean
+	def unWhitelist( address : String ) : Boolean
+	def whitelist( address : String ) : Unit
+	def getWhitelistedIPs() : Array[String]
+	def updateWhitelist() : Unit
+	def setWhitelist( whitelist : Boolean ) : Unit
+	def isWhitelist() : Boolean
+	def getOps() : Array[String]
+}

@@ -1,0 +1,9 @@
+.classpath
+.directory
+.project
+
+.settings/
+.git/
+
+eclipse/
+tmp/

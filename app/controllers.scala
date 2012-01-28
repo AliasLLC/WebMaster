@@ -28,11 +28,12 @@ package controllers
 
 import play._
 import play.mvc._
+import play.modules.router.Get
+import views.Application._
 
 object Application extends Controller {
     
-    import views.Application._
-    
+    @Get("/")
     def index = {
         html.index("See Scala is Better!")
     }
