@@ -23,3 +23,39 @@
  * License and see <http://www.aliashost.com/AliasLicenseVersion_1.txt> for the full license,
  * including the MIT license.
  */
+
+package com.aliashost.WebMaster.database.filesystem
+
+import com.aliashost.WebMaster.database.Database
+import com.aliashost.WebMaster.database.Table
+
+class Direcotry(Dir : java.io.File) extends Database{
+	
+	private var tables : Array[Table] = null;
+	
+	def this(Dir : String) = this(new java.io.File(Dir))
+	
+	override def getName() : String = {
+		return Dir.getName();
+	}
+	override def setName(name : String) : Boolean = {
+		var tmp : java.io.File = if (Dir.getParent() != null) new java.io.File(Dir.getParent() + name) else new java.io.File(name)
+		if (tmp.exists()){
+			return false
+		}
+		return Dir.renameTo(tmp)
+	}
+	override def getTables() : Array[Table] = {
+		return null
+	}
+	override def getTable(name : String) : Table = {
+		return null
+	}
+	override def addTable(table : Table) : Boolean = {
+		return false
+	}
+	override def dropTable(table : Table) : Boolean = {
+		return false
+	}
+	
+}

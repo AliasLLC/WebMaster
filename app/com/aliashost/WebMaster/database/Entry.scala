@@ -28,4 +28,5 @@ package com.aliashost.WebMaster.database
 
 trait Entry {
 	def getName() : String
+	def getValue() : String
 }

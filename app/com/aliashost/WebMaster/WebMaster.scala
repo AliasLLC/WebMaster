@@ -26,32 +26,87 @@
 
 package com.aliashost.WebMaster
 
-import com.aliashost.WebMaster.Kernel
-import com.aliashost.WebMaster.System
 import java.io.File
 import play.Logger
+import play.Play
 
-class WebMaster extends Kernel with System {
+object WebMaster extends Kernel with System {
+	private val name : String = "WebMaster Core"
+	private val version : String = "0.0.1"
+		
+	private val configDir : File = Play.getFile("conf")
+	private var logger : Logger = null
+	
+	private var init = false
+	
+	private var whitelisted : Array[String] = null
+	private var whitelist = false
+	private val whitelistFile : File = new File(configDir, "whitelist")
+	
+	private var ops : Array[String] = null
+	private val opsFile : File = new File(configDir, "ops")
+	
+	private var banned : Array[String] = null
+	private val bannedFile : File = new File(configDir, "banned")
+	
+	private var address : String = "*"
+	private var port : String = "9000"
+	
+	private val appFile : File = new File(configDir, "application.conf")
+	private val routesFile : File = new File(configDir, "routes")
+	private val messagesFile : File = new File(configDir, "messages")
+	private val dependenciesFile : File = new File(configDir, "dependencies.yml")
+	
+	def initialize() : Boolean = {
+		if(!init){
+			if(!whitelistFile.exists()){
+				whitelistFile.createNewFile()
+			}
+			if(!opsFile.exists()){
+				opsFile.createNewFile()
+			}
+			if(!bannedFile.exists()){
+				bannedFile.createNewFile()
+			}
+			init = true
+		}
+		return init
+	}
+	
 	override def getName() : String = {
-		return null
+		return name
+	}
+	override def getVersion() : String = {
+		return version
+	}
+	override def getConfigDirectory() : File = {
+		return configDir
+	}
+	override def getLogger() : Logger = {
+		return logger
 	}
 	override def getIPBans() : Array[String] = {
-		return null
+		return banned
 	}
+	override def getWhitelistedIPs() : Array[String] = {
+		return whitelisted
+	}
+	override def getOps() : Array[String] = {
+		return ops
+	}
+	
 	override def ban( address : String ) : Unit = {
 		
 	}
 	override def unban( address : String ) : Boolean = {
 		return false
 	}
+	
 	override def unWhitelist( address : String ) : Boolean = {
 		return false
 	}
 	override def whitelist( address : String ) : Unit = {
 
-	}
-	override def getWhitelistedIPs() : Array[String] = {
-		return null
 	}
 	override def updateWhitelist() : Unit = {
 		
@@ -62,18 +117,7 @@ class WebMaster extends Kernel with System {
 	override def isWhitelist() : Boolean = {
 		return false
 	}
-	override def getOps() : Array[String] = {
-		return null
-	}
-	override def getVersion() : String = {
-		return null
-	}
-	override def getConfigDirectory() : File = {
-		return null
-	}
-	override def getLogger() : Logger = {
-		return null
-	}
+	
 	override def bind(address : String, port : String) : Boolean = {
 		return false
 	}

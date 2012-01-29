@@ -28,12 +28,11 @@ package controllers
 
 import play._
 import play.mvc._
-import play.modules.router.Get
 import views.Application._
+import com.aliashost.WebMaster.WebMaster
 
 object Application extends Controller {
-    
-    @Get("/")
+	WebMaster.initialize();
     def index = {
         html.index("See Scala is Better!")
     }

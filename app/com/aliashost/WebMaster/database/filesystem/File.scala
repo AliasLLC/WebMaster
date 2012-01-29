@@ -23,3 +23,36 @@
  * License and see <http://www.aliashost.com/AliasLicenseVersion_1.txt> for the full license,
  * including the MIT license.
  */
+
+package com.aliashost.WebMaster.database.filesystem
+
+import com.aliashost.WebMaster.database.Table
+import com.aliashost.WebMaster.database.Database
+
+class File(file : java.io.File) extends Table{
+	
+	def this(file : String) = this(new java.io.File(file))
+	
+	override def getName() : String = {
+		return null
+	}
+	override def getDatabase() : Database = {
+		return null
+	}
+	override def canRead() : Boolean = {
+		return false
+	}
+	override def canWrite() : Boolean = {
+		return false
+	}
+	override def isLocked() : Boolean = {
+		return false
+	}
+	override def setLocked( locked : Boolean ) : Boolean = {
+		return false
+	}
+	override def isOwner() : Boolean = {
+		return false
+	}
+	
+}

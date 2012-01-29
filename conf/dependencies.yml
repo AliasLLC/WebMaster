@@ -4,4 +4,3 @@ require:
     - play
     - play -> scala 0.9.1
     - play -> akka head
-    - play -> router 1.2
