@@ -25,13 +25,76 @@
  */
 
 package com.aliashost.WebMaster.database
+import org.spout.api.UnsafeMethod
 
 trait Table {
-	def getName() : String
-	def getDatabase() : Database
-	def canRead() : Boolean
-	def canWrite() : Boolean
-	def isLocked() : Boolean
-	def setLocked( locked : Boolean ) : Boolean
-	def isOwner() : Boolean
+	
+	private var Name : String = null
+	private var Parent : Database = null
+	private var Locked : Boolean = false
+	private var Write : Boolean = true
+	private var Read : Boolean = true
+	private var Owner : Boolean = true
+	
+	def getName() : String = {
+		return Name
+	}
+	
+	def getDatabase() : Database = {
+		return Parent
+	}
+	
+	def setName( name : String ) : Boolean = {
+		if(name.trim() != ""){
+			Name = name
+			return true
+		}
+		return false
+	}
+	
+	@UnsafeMethod
+	def setDatabase( database : Database ) : Boolean = {
+		if(database.eq(Parent)){
+			return false
+		}
+		Parent = database
+		return true
+	}
+	
+	def setLocked( locked : Boolean ) : Boolean = {
+		if( (Locked && locked) || (!Locked && locked)){
+			return false
+		}
+		Locked = locked
+		return true
+	}
+	
+	def canRead() : Boolean = {
+		return Read
+	}
+	
+	def canWrite() : Boolean = {
+		return Write
+	}
+	
+	def isLocked() : Boolean = {
+		return Locked
+	}
+	
+	def isOwner() : Boolean = {
+		return Owner
+	}
+	
+	protected def setOwner( owner : Boolean ) : Unit = {
+		Owner = owner
+	}
+	
+	protected def setRead( read : Boolean ) : Unit = {
+		Read = read
+	}
+	
+	protected def setWrite( write : Boolean ) : Unit = {
+		Write = write
+	}
+	
 }

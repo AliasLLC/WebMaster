@@ -32,26 +32,38 @@ import com.aliashost.WebMaster.database.Database
 class File(file : java.io.File) extends Table{
 	
 	def this(file : String) = this(new java.io.File(file))
+	super.setName(file.getName())
+	super.setLocked(file.isHidden())
+	super.setOwner(file.canRead() && file.canWrite() && file.canExecute())
+	super.setRead(file.canRead())
+	super.setWrite(file.canWrite())
 	
-	override def getName() : String = {
-		return null
+	def getFile() : java.io.File = {
+		return file
 	}
-	override def getDatabase() : Database = {
-		return null
-	}
-	override def canRead() : Boolean = {
-		return false
-	}
-	override def canWrite() : Boolean = {
-		return false
-	}
-	override def isLocked() : Boolean = {
-		return false
-	}
+	
 	override def setLocked( locked : Boolean ) : Boolean = {
+		if(super.setLocked(locked)){
+			if(isLocked()){
+				return setName("." + getName())
+			}
+			return setName(getName().substring(1))
+		}
 		return false
 	}
-	override def isOwner() : Boolean = {
+	
+	override def setName(name : String) : Boolean = {
+		if( name.trim() == "" ){
+			return false
+		}
+		var tmp : java.io.File = if (file.getParent() != null) new java.io.File(file.getParent() + name) else new java.io.File(name)
+		if (tmp.exists()){
+			return false
+		}
+		if(file.renameTo(tmp)){
+			super.setName(name)
+			return true
+		}
 		return false
 	}
 	

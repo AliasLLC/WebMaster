@@ -25,12 +25,60 @@
  */
 
 package com.aliashost.WebMaster.database
+import scala.collection.mutable.DoubleLinkedList
 
 trait Database {
-	def getName() : String
-	def setName(name : String) : Boolean
-	def getTables() : Array[Table]
-	def getTable(name : String) : Table
-	def addTable(table : Table) : Boolean
-	def dropTable(table : Table) : Boolean
+	
+	private var Name : String = null 
+	
+	private var Tables : DoubleLinkedList[Table] = null
+	
+	def getName() : String = {
+		return Name
+	}
+	
+	def setName(name : String) : Boolean = {
+		if(name != "") {
+			Name = name
+			return true
+		}
+		return false
+	}
+	
+	def getTables() : Array[Table] = {
+		return Tables.toArray
+	}
+	
+	def getTable(name : String) : Table = {
+		for(table <- Tables){
+			if(table.getName() == name){
+				return table
+			}
+		}
+		return null
+		
+	}
+	
+	def addTable(table : Table) : Boolean = {
+		for(t <- Tables){
+			if(t.eq(table) || t.getName() == table.getName()){
+				return false
+			}
+		}
+		table.setDatabase(this)
+		Tables.+:(table)
+		return true
+	}
+	
+	def dropTable(table : Table, strict : Boolean = true) : Boolean = {
+		for(t <- Tables){
+			if(t.eq(table) || ( !strict && t.getName() == table.getName() ) ){
+				//I don't know if a for loop increments the list's internal counter if not we'll
+				//have to do it manually using next's.
+				Tables.remove()
+				return true
+			}
+		}
+		return false
+	}
 }

@@ -28,10 +28,19 @@ package com.aliashost.WebMaster.database.filesystem
 
 import com.aliashost.WebMaster.database.Database
 import com.aliashost.WebMaster.database.Table
+import scala.collection.mutable.DoubleLinkedList
 
 class Direcotry(Dir : java.io.File) extends Database{
 	
-	private var tables : Array[Table] = null;
+	private var tables : DoubleLinkedList[Table] = null
+	
+	for(file <- Dir.listFiles()) {
+		var tmp = new File(file)
+		if( tables == null ) {
+			tables = new DoubleLinkedList[Table]()
+		}
+		tables.+:(tmp)
+	}
 	
 	def this(Dir : String) = this(new java.io.File(Dir))
 	
@@ -39,22 +48,27 @@ class Direcotry(Dir : java.io.File) extends Database{
 		return Dir.getName();
 	}
 	override def setName(name : String) : Boolean = {
+		if( name.trim() == "" ){
+			return false
+		}
 		var tmp : java.io.File = if (Dir.getParent() != null) new java.io.File(Dir.getParent() + name) else new java.io.File(name)
 		if (tmp.exists()){
 			return false
 		}
-		return Dir.renameTo(tmp)
-	}
-	override def getTables() : Array[Table] = {
-		return null
-	}
-	override def getTable(name : String) : Table = {
-		return null
-	}
-	override def addTable(table : Table) : Boolean = {
+		if(Dir.renameTo(tmp)){
+			super.setName(name)
+			return true
+		}
 		return false
 	}
-	override def dropTable(table : Table) : Boolean = {
+	override def addTable(table : Table) : Boolean = {
+		if(table.getName().trim() == ""){
+			return false
+		}
+		val file : File = table.asInstanceOf[File];
+		if(file.getFile().exists()){
+			
+		}
 		return false
 	}
 	
