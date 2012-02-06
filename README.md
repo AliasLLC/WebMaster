@@ -1,5 +1,9 @@
 WebMaster
 ============
+Warning
+--------
+The PHP version of WebMaster is now depreciated and no longer in development. This branch is for historical and reference purposes only.
+
 Introduction
 --------------
 WebMaster is an open-source all-purpose website content managment system (CMS) that is currently in development by [Alias Host](http://www.aliashost.com) in partnership with [MyRuneLog's Development Team](http://www.myrunelog.com/forum/).
