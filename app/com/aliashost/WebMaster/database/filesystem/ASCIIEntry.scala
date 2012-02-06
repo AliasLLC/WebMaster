@@ -23,4 +23,39 @@
  * License and see <http://www.aliashost.com/AliasLicenseVersion_1.txt> for the full license,
  * including the MIT license.
  */
+
 package com.aliashost.WebMaster.database.filesystem
+import com.aliashost.WebMaster.database.Entry
+
+object ASCIIEntry{
+	def validate(v : String) : Boolean = {
+		var value = v 
+		if( value == null ){
+			value = ""
+		}
+		for(c <- value.toCharArray()){
+			if(c.toInt > 128) {
+				return false
+			}
+		}
+		return true
+	}
+}
+
+@throws(classOf[IllegalArgumentException])
+class ASCIIEntry(private var Name : String,private var Value : String = "") extends TextEntry{
+	if(!ASCIIEntry.validate(Value)){
+		throw new IllegalArgumentException("String: " + Value + " contains non-ASCII characters")
+	}
+	Value = new String(Value.getBytes("US-ASCII"))
+	setName(Name)
+	setValue(Value)
+	
+	override def setValue( value : String ) : Boolean = {
+		if(ASCIIEntry.validate(value)){
+			return super.setValue(value)
+		}
+		return false
+	}
+	
+}

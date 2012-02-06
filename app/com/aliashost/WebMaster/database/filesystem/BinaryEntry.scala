@@ -24,3 +24,21 @@
  * including the MIT license.
  */
 package com.aliashost.WebMaster.database.filesystem
+import com.aliashost.WebMaster.database.Entry
+
+class BinaryEntry(private var Name : String, private var Value : Array[Byte] = null) extends Entry[Array[Byte]]{
+	
+	override def setName(name : String) : Boolean = {
+		return super.setName(name)
+	}
+
+	override def getValue() : Array[Byte] = {
+		return Value
+	}
+	
+	override def setValue( value : Array[Byte] ) : Boolean = {
+		Value = value
+		return true
+	}
+	
+}

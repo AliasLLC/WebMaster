@@ -24,3 +24,9 @@
  * including the MIT license.
  */
 package com.aliashost.WebMaster.database.filesystem
+
+class UTF8Entry(private var Name : String,private var Value : String = "") extends TextEntry{
+	Value = new String(Value.getBytes("US-ASCII"))
+	setName(Name)
+	setValue(Value)
+}

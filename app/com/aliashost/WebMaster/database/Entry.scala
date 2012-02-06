@@ -26,7 +26,22 @@
 
 package com.aliashost.WebMaster.database
 
-trait Entry {
-	def getName() : String
-	def getValue() : String
+trait Entry[T] {
+	private var Name : String = null
+	
+	def getName() : String = {
+		return Name
+	}
+	
+	def getValue() : T
+	
+	protected def setName(name : String) : Boolean = {
+		if(name.trim() != ""){
+			Name = name
+			return true
+		}
+		return false
+	}
+	
+	protected def setValue( value : T ) : Boolean
 }

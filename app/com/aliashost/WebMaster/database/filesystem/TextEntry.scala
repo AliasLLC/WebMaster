@@ -24,3 +24,22 @@
  * including the MIT license.
  */
 package com.aliashost.WebMaster.database.filesystem
+import com.aliashost.WebMaster.database.Entry
+
+abstract class TextEntry extends Entry[String]{
+	
+	private var Value : String = null
+	
+	override def setName(name : String) : Boolean = {
+		return super.setName(name)
+	}
+
+	override def getValue() : String = {
+		return Value
+	}
+	
+	override def setValue( value : String ) : Boolean = {
+		Value = value
+		return true
+	}
+}

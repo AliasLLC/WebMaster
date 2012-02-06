@@ -31,6 +31,8 @@ import com.aliashost.WebMaster.database.Database
 
 class File(file : java.io.File) extends Table{
 	
+	private var fws : File
+	
 	def this(file : String) = this(new java.io.File(file))
 	super.setName(file.getName())
 	super.setLocked(file.isHidden())
