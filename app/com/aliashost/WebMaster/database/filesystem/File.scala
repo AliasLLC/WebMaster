@@ -28,10 +28,11 @@ package com.aliashost.WebMaster.database.filesystem
 
 import com.aliashost.WebMaster.database.Table
 import com.aliashost.WebMaster.database.Database
+import scala.collection.mutable.DoubleLinkedList
+import com.aliashost.WebMaster.database.Entry
 
 class File(file : java.io.File) extends Table{
-	
-	private var fws : File
+	private var entries : DoubleLinkedList[Entry] = null
 	
 	def this(file : String) = this(new java.io.File(file))
 	super.setName(file.getName())

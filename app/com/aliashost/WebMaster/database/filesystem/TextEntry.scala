@@ -26,7 +26,7 @@
 package com.aliashost.WebMaster.database.filesystem
 import com.aliashost.WebMaster.database.Entry
 
-abstract class TextEntry extends Entry[String]{
+abstract class TextEntry extends Entry{
 	
 	private var Value : String = null
 	
@@ -34,12 +34,15 @@ abstract class TextEntry extends Entry[String]{
 		return super.setName(name)
 	}
 
-	override def getValue() : String = {
+	override def getValue() : AnyRef = {
 		return Value
 	}
 	
-	override def setValue( value : String ) : Boolean = {
-		Value = value
-		return true
+	override def setValue( value : AnyRef ) : Boolean = {
+		if(value.isInstanceOf[String]){
+			Value = value.asInstanceOf[String]
+			return true
+		}
+		return false
 	}
 }

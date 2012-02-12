@@ -26,19 +26,22 @@
 package com.aliashost.WebMaster.database.filesystem
 import com.aliashost.WebMaster.database.Entry
 
-class BinaryEntry(private var Name : String, private var Value : Array[Byte] = null) extends Entry[Array[Byte]]{
+class BinaryEntry(private var Name : String, private var Value : Array[Byte] = null) extends Entry{
 	
 	override def setName(name : String) : Boolean = {
 		return super.setName(name)
 	}
 
-	override def getValue() : Array[Byte] = {
+	override def getValue() : AnyRef = {
 		return Value
 	}
 	
-	override def setValue( value : Array[Byte] ) : Boolean = {
-		Value = value
-		return true
+	override def setValue( value : AnyRef ) : Boolean = {
+		if(value.isInstanceOf[Array[Byte]]){
+			Value = value.asInstanceOf[Array[Byte]]
+			return true
+		}
+		return false
 	}
 	
 }

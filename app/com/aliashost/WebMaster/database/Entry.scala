@@ -26,14 +26,14 @@
 
 package com.aliashost.WebMaster.database
 
-trait Entry[T] {
+trait Entry	 {
 	private var Name : String = null
 	
 	def getName() : String = {
 		return Name
 	}
 	
-	def getValue() : T
+	def getValue() : AnyRef
 	
 	protected def setName(name : String) : Boolean = {
 		if(name.trim() != ""){
@@ -43,5 +43,5 @@ trait Entry[T] {
 		return false
 	}
 	
-	protected def setValue( value : T ) : Boolean
+	protected def setValue( value : AnyRef ) : Boolean
 }

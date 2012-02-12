@@ -47,6 +47,7 @@ class Direcotry(Dir : java.io.File) extends Database{
 	override def getName() : String = {
 		return Dir.getName();
 	}
+	
 	override def setName(name : String) : Boolean = {
 		if( name.trim() == "" ){
 			return false
@@ -61,14 +62,12 @@ class Direcotry(Dir : java.io.File) extends Database{
 		}
 		return false
 	}
+	
 	override def addTable(table : Table) : Boolean = {
 		if(table.getName().trim() == ""){
 			return false
 		}
 		val file : File = table.asInstanceOf[File];
-		if(file.getFile().exists()){
-			
-		}
 		return false
 	}
 	
