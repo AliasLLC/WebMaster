@@ -1,0 +1,36 @@
+Name: Content
+Parent:
+Functionality: Displays items
+Template:
+
+CSS:
+#{content} {
+	padding: {contentpad};
+}
+
+HTML:
+
+<div id="{container}">
+	<div class="{padding}">
+		<div id="{content}">
+				
+		</div>
+	</div>
+</div>
+
+
+LEGEND:
+
+Div Id:
+	{container}
+		Found in parent folder
+	{content}
+		Div Id for showing content within the site.
+
+Div Id variables:
+	{contentpad}
+		Padding amount for content Div Id
+
+Classes:
+	{padding}
+		Found in parent folder

@@ -1,0 +1,12 @@
+Name: Poll
+Parent: Sidebar/Items
+Functionality: Allows people to vote in polls
+Template:
+
+CSS:
+
+
+HTML:
+
+
+LEGEND:

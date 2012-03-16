@@ -1,0 +1,12 @@
+Name: RSSnews
+Parent: container\container-sidebar\item-sidebar\items
+Functionality: Shows RSS feeds from RSS imports
+Template:
+
+CSS:
+The CSS code is defined in file Container-Sidebar #{sidebar}
+
+HTML:
+
+
+LEGEND:

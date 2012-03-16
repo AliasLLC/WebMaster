@@ -1,0 +1,51 @@
+Name: Container
+Parent:
+Functionality: Contains content for displaying items
+Template:
+
+CSS:
+#{container} {
+	border-top: {conbordt};
+	border-bottom: {conbordb};
+	background: {conbg};
+	padding: {conpad};
+
+#{container} .{padding} {
+	margin: {cpadmarg};
+	width: {cpadwidth};
+}
+
+HTML:
+<div id="{container}">
+	<div class="{padding}>
+
+	</div>
+</div>
+
+LEGEND:
+
+Div Id:
+	{container}
+		Div Id that contains items and main info for the site.
+
+Classes:
+	{padding}
+`		Padding amount for the container
+
+Div Id variables:
+	{container}
+		{conbordt}
+			Border top specifications for container
+		{conbordb}
+			Border bottom specifications for container
+		{conbg}
+			Background for the container
+		{conpad}
+			Padding amount for container
+
+Class variables:
+	{padding}
+		{cpadmarg}
+			Margin amount for padding class
+		{cpadwidth}
+			Width amount for padding class

@@ -1,0 +1,12 @@
+Name: ThisPage
+Parent: container\container-sidebar\item-sidebar\items
+Functionality: Displays info from the page your viewing and options to share the page
+Template:
+
+CSS:
+
+
+HTML:
+
+
+LEGEND:
