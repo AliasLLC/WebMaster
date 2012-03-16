@@ -5,8 +5,59 @@ Template:
 
 CSS:
 
-
+#stats {
+	margin: {statsmarg};
+	text-shadow: {statsts};
+}
+	#stats h5 {
+		font-size: {statsh5fs};
+		margin: {statsh5marg};
+		float: {statsh5fl};
+		color: {statsh5color};
+	}
+	#stats p {
+		font-size: {statspfs};
+		line-height: normal;
+		top: 5px;
+		position: {statsppos};
+		text-align: {statspta};
+		font-family: {statspff};
+	}
+#social {
+	margin: {socialmarg};
+	text-align: {socialta};
+}
+	#social a, #social img {
+		border: {sasibord};
+		opacity: {sasiop};
+		filter: {sasifilt};
+	}
+	#social img:hover {
+		opacity: {sihovop};
+		filter: {sihovfilt};
+	}
+	#social img {
+		margin: {simarg};
+	}
+	
 HTML:
 
+<div class="item-sidebar">
+	<h3 class="sidebar-title"><span>{title}</span></h3>
+		<div class="center left">
+			<iframe src="http://www.facebook.com/plugins/like.php?href={linktolike}&amp;layout=box_count&amp;show_faces=true&amp;width=50&amp;action=like&amp;font=arial&amp;colorscheme=dark&amp;height=65" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:65px; margin: 0px 0px 0px 5px;" allowtransparency="true"></iframe>
+		</div>
+<div id="{stats}">
+	<h5>{uniqeviews}</h5>
+	<p>Unique views<br>for this page</p>
+</div>
+	<div id="{social}">
+		<a href="{twitterpage}" title="Twitter"><img src="assets/img/icons/twitter-24x24.png" alt="Twitter Icon"></a>
+		<a href="{diggpage}" title="Digg"><img src="assets/img/icons/digg-24x24.png" alt="Digg Icon"></a>
+		<a href="{ridditpage}" title="Reddit"><img src="assets/img/icons/reddit-24x24.png" alt="Reddit Icon"></a>
+		<a href="{delipage}" onclick="window.open('http://www.delicious.com/save?v=5&amp;noui&amp;jump=close&amp;url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title), 'delicious','toolbar=no,width=550,height=550'); return false;" title="Delicious"><img src="assets/img/icons/delicious-24x24.png" alt="Delicious Icon"></a>
+	</div>
+	<div class="clear"></div>
+</div>
 
 LEGEND:

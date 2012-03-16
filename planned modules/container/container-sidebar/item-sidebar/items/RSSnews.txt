@@ -8,5 +8,13 @@ The CSS code is defined in file Container-Sidebar #{sidebar}
 
 HTML:
 
+<div class="{item-sidebar}">
+	<h3 class="{sidebar-title}"><span>{newsname}</span></h3>
+	<ul>
+		<li>"<a href="http://services.runescape.com/m=news/behind-the-scenes---march" title="Behind the Scenes - March - 29 February 2012, 7:00 pm">Behind the Scenes - March</a>"</li>
+		<li>"<a href="http://services.runescape.com/m=news/maintenance--1st-of-march-10am-gmt" title="Maintenance – 1st of March, 10am (GMT) - 28 February 2012, 7:00 pm">Maintenance – 1st of March, 10am (GMT)</a>"</li>
+		<li>"<a href="http://services.runescape.com/m=news/wounded-soldiers-strict-nurses-and-voice-acting-winners" title="Wounded Soldiers, Strict Nurses and Voice-Acting Winners - 27 February 2012, 7:00 pm">Wounded Soldiers, Strict Nurses and Voice-Acting Winners</a>"</li>
+	</ul>
+</div>
 
 LEGEND:
