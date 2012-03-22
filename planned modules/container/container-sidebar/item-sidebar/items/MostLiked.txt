@@ -1,0 +1,20 @@
+Name: MostLiked
+Parent: container\container-sidebar\item-sidebar\items
+Functionality: Displays the most liked forum topic
+Template:
+
+CSS:
+The CSS code is defined in file Container-Sidebar #{sidebar} h3
+
+HTML:
+<h3><span>{title}</span></h3>
+	<ol>
+		<li>"<a href="{topiclink}">{likedtitle}</a>" by <a href="{userlink}">{username}</a></li>
+		<li>"<a href="{topiclink}">{likedtitle}</a>" by <a href="{userlink}">{username}</a></li>
+		<li>"<a href="{topiclink}">{likedtitle}</a>" by <a href="{userlink}">{username}</a></li>
+		<li>"<a href="{topiclink}">{likedtitle}</a>" by <a href="{userlink}">{username}</a></li>
+		<li>"<a href="{topiclink}">{likedtitle}</a>" by <a href="{userlink}">{username}</a></li>
+	</ol>
+
+	
+LEGEND:

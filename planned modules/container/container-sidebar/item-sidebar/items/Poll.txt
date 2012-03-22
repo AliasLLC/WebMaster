@@ -1,0 +1,31 @@
+Name: Poll
+Parent: container\container-sidebar\item-sidebar\items
+Functionality: Allows people to vote in polls
+Template:
+
+CSS:
+#{poll} {
+	
+}
+	#{poll} #{submit} {
+		width: {pswidth};
+		margin: {psmarg};
+	}
+	#{poll} {label} {
+		position: {plpos};
+		top: {pltop};
+	}
+
+HTML:
+<h3><span>{title}</span></h3>
+	<div id="{poll}">
+		<p>{pollQuestion}</p>
+			<form>
+				<ol>
+					<li><input type="{radio}" id="{option-1}" name="options" value="{value}" /> <label for="{option}">{value}</label></li>
+				</ol>
+					<input type="submit" id="{submit}" name="{namesub}" value="{View Results}" />
+			</form>
+	</div>
+				
+LEGEND:

@@ -1,0 +1,314 @@
+Name: Item-news
+Parent: Container
+Functionality: Displays news for the website.
+Template:
+
+CSS:
+.{item-news} {
+	
+}
+	.{item-news} .{post-title} {
+		background: {ptbg};
+		position: {ptposition};
+		text-align: {ptta};
+		padding: {ptpad};
+		margin: {ptmarg};
+		border-{brection}: {ptbordstyle};
+	}
+		.{item-news} .{post-title} .{post-meta} {
+			font-family: {ptpmfontfam};
+			font-style: {ptpmfontstyle};
+			font-size: {ptpmfontsize};
+			line-height: {ptpmlineh};
+			margin: {ptpmmargin};
+			color: {ptpmcolor};
+		}
+			.{item-news} .{post-title} .{post-meta} strong {
+				
+			}
+	.{item-news} .{post-category} {
+		background: {pcbg};
+		float: {pcfloat};
+		padding: {pcpad};
+		margin: {pcmarg};
+		top: {pctop};
+		z-index: {pczdex};
+		position: {pcposition};
+		font-family: {pcfontfam};
+		font-size: {pcfontsize};
+		line-height: {pclineh};
+		text-indent: {pctdent};
+		text-transform: {pctexttrans};
+	}
+		.{item-news} .{post-category} a {
+			color: {pcacolor};
+			font-weight: {pcafw};
+			text-decoration: {pcatd};
+			border: {pcaborder};
+		}
+		.{item-news} .{post-category} a:hover {
+			color: {pcahcolor};
+            font-weight: {pcahfw};
+            text-decoration: {pcahtd};
+            border: {pcahborder};
+		}
+		.{item-news} .{post-category} a:active, .{item-news} .{post-category} a:focus {
+			color: {pcafcolor};
+		}
+	.{item-news} .{post-image} {
+		margin: {pimarg};
+		height: {piheight};
+		background: {pibg};
+		display: {pidis};
+	}
+	.{item-news} .{post-content} {
+		
+	}
+	.{item-news} .{post-bottom} {
+		background: {pbbg};
+		padding: {pbpad};
+		margin: {pbmarg};
+	}
+		.{item-news} .{post-bottom} ul {
+			list-style: {pbulls};
+			background: {pbulbg};
+			margin: {pbulmarg};
+		}
+			.{item-news} .{post-bottom} ul li {
+				display: {pbullidis};
+				padding: {pbullipad};
+				margin: {pbullimarg};
+				background: {pbullibg};
+			}
+				.{item-news} .{post-bottom} ul li a {
+					background: {pbulliabg};
+					height: {pbulliah};
+					width: {pbulliaw};
+					font-family: {pbulliafontfam};
+					color: {pbulliacolor};
+					text-shadow: {pbulliats};
+					font-size: {pbulliafontsize};
+					text-transform: {pbulliatexttrans};
+					text-align: {pbulliata};
+					padding: {pbulliapad};
+					display: {pbulliadis};
+					border: {pbulliaborder};
+				}
+				.{item-news} .{post-bottom} ul li a:hover {
+					background: {pbulliahbg};
+					color: {pbulliahcolor};
+				}
+				.{item-news} .{post-bottom} ul li a:active, .{item-news} .{post-bottom} ul li a:focus {
+					
+				}
+
+
+HTML:
+<div id="{container}">
+	<div id="{content}">
+		<div class="{item-news}">
+			<div class="{post-title}">
+				<h2>{postname}</h2>
+				<p class="{post-meta}">by <strong>{postername}</strong> on <strong>{date}</strong></p>
+			</div>
+			<p class="{post-category}"><a href="{postcatlink}" title="{postcattitle}">{postcatname}</a></p>
+			<img src="{postimagelink}" alt="{postimagealt}" class="{post-image}">
+			<div class="{post-content}">
+				<p>{content}</p>
+			</div>
+			<div class="{post-bottom}">
+				<ul>
+					<li><a href="{buttonlink1}" title="{buttontitle1}">{buttontext1}</a></li>
+					<li><a href="{buttonlink2}" title="{buttontitle2}">{buttontext2}</a></li>                                            	
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>  
+
+
+              
+LEGEND:
+
+Div Id:
+	{container}
+		Comes from parent folder
+	{content}
+		Comes from parent folder
+
+Classes:
+	{item-news}
+		Class that allows inner classes to operate through.
+	{post-title}
+		Class for news post title
+	{post-meta}
+		Class to display user name and date of post
+	{post-category}
+		Class that allows you to see and go to the catagory area
+	{post-image}
+		Class that sets default settings for the background image
+	{post-content}
+		Class that shows news post content
+	{post-bottom}
+		Class that displays useful buttons
+
+Class variables:
+	{post-title}:
+		{ptbg}
+			Background for {post-title}
+		{ptposition}
+			Position type for {post-title}
+		{ptta}
+			Text-align direction for {post-title}
+		{ptpad}
+			Padding amount for {post-title}
+		{ptmarg}
+			Margin specifications for {post-title}
+		{brection}
+			Direction for border start point
+		{ptbordstyle}
+			Border specifications for {post-title}
+		
+	{post-title} {post-meta}:
+		{ptpmfontfam}
+			Font-family for {post-title} and {post-meta}
+		{ptpmfontstyle}
+			Font-style for {post-title} and {post-meta}
+		{ptpmfontsize}
+			Font-size for {post-title} and {post-meta}
+		{ptpmlineh}
+			Line-height for {post-title} and {post-meta}
+		{ptpmmarg}
+			Margin specifications for {post-title} and {post-meta}
+		{ptpmcolor}
+			Color used for {post-title} and {post-meta}
+		
+	{post-category}:
+		{pcbg}
+			Background for {post-category}
+		{pcfloat}
+			Float direction for {post-category}
+		{pcpad}
+			Padding amount for {post-category}
+		{pcmarg}
+			Margin specifications for {post-category}
+		{pctop}
+			Amount of pixles from top for {post-category}
+		{pczdex}
+			Z-index type for {post-category}
+		{pcposition}
+			Position type for {post-category}
+		{pcfontfam}
+			Font-family for {post-category}
+		{pcfontsize}
+			Font-size for {post-category}
+		{pclineh}
+			Line-height for {post-category}
+		{pctdent}
+			Text-indent for {post-category}
+		{pctexttrans}
+			Text-transform type for {post-category}
+		{pcacolor}
+			Color for anchor in {post-category}
+		{pcafw}
+			Font-weight amount for anchor in {post-category}
+		{pcatd}
+			Text-decoration type for anchor in {post-category}
+		{pcaborder}
+			Border type for anchor in {post-category}
+		{pcahcolor}
+			Color for anchor hover in {post-category}
+		{pcahfw}
+			Font-weight amount for anchor hover in {post-category}
+		{pcahtd}
+			Text-decoration type for anchor hover in {post-category}
+		{pcahborder}
+			Border type for anchor hover in {post-category}
+		{pcafcolor}
+			Color for anchor active and anchor focus in {post-category}
+	
+	{post-image}:
+		{pimarg}
+			Margin specifications for {post-image}
+		{piheight}
+			Height of image for {post-image}
+		{pibg}
+			Background for {post-image}
+		{pidis}
+			Display type for {post-image}
+	
+	{post-bottom}:
+		{pbulls}
+			List-style used for {post-bottom}
+		{pbulbg}
+			Background for {post-bottom}
+		{pbulmarg}
+			Margin specifications for {post-bottom}
+		{pbullidis}
+			Display type for list items in {post-bottom}
+		{pbullipad}
+			Padding amount for list items in {post-bottom}
+		{pbullimarg}
+			Margin specifications for list items in {post-bottom}
+		{pbullibg}
+			Background for list items in {post-bottom}
+		{pbulliabg}
+			Background for anchored list items in {post-bottom}
+		{pbulliah}
+			Height for anchored list items in {post-bottom}
+		{pbulliaw}
+			Width for anchored list items in {post-bottom}
+		{pbulliafontfam}
+			Font-family for anchored list items in {post-bottom}
+		{pbulliacolor}
+			Color for anchored list items in {post-bottom}
+		{pbulliats}
+			Text-shadow specifications for anchored list items in {post-bottom}
+		{pbulliafontsize}
+			Font-size for anchored list items in {post-bottom}
+		{pbulliatexttrans}
+			Text-transform type for anchored list items in {post-bottom}
+		{pbulliata}
+			Text-align type for anchored list items in {post-bottom}
+		{pbulliapad}
+			Padding amount for anchored list items in {post-bottom}
+		{pbulliadis}
+			Display type for anchored list items in {post-bottom}
+		{pbulliaborder}
+			Border type for anchored list items in {post-bottom}
+		{pbulliahbg}
+			Background for hovered anchor list items in {post-bottom}
+		{pbulliahcolor}
+			Color for hovered anchor list items in {post-bottom}
+
+HTML varliables:
+	{postname}
+		The name of the news post
+	{postername}
+		Name of person who posted the news
+	{date}
+		Date that the news was posted
+	{postcatlink}
+		Category link which holds all other post in the same category
+	{postcattitle}
+		Title of the category that the post links with
+	{postcatname}
+		Name that shows up for the category listing
+	{postimagelink}
+		Image link for the image that is displayed at the top of the news post
+	{postimagealt}
+		Alt name for the image
+	{content}
+		The content of the news post
+	{buttonlink1}
+		Link that the first button directs you to
+	{buttontitle1}
+		Title for the first button
+	{buttontext1}
+		Name that is posted on the button
+	{buttonlink2}
+		Link that the second button directs you to
+	{buttontitle2}
+		Title for the second button
+	{buttontext2}
+		Name that is posted on the button

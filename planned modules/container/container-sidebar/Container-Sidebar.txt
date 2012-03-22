@@ -1,0 +1,58 @@
+Name: Container-Sidebar
+Parent: container/container-sidebar
+Functionality: Sets sidebar layout properties
+Template:
+
+CSS:
+#{sidebar} {
+	float: {sbfloat};
+	width: {sbwidth};
+	margin: {sbmarg};
+	padding: {sbpad};
+	border-left: {sbborder};
+	color: {sbcolor};
+	font-family: {sbfontfam};
+	text-shadow: {sbtshad};
+}
+	#{sidebar} a {
+		color: {sbacolor};
+		border: {sbaborder};
+	}
+	#{sidebar} a:hover {
+		color: {sbahcolor};
+	}
+	#{sidebar} a:active, #{sidebar} a:focus {
+		
+	}
+	#{sidebar} p {
+		text-indent: {sbptdent};
+	}
+	#{sidebar} h3 {
+		color: {sbh3color};
+		border-bottom: {sbh3boder};
+		text-align: {sbh3ta};
+		text-transform: {sbh3tt};
+		font-size: {sbh3fs};
+		font-weight: {sbh3fw};
+		padding: {sbh3pad};
+		text-shadow: {sbh3ts};
+		margin: {sbh3marg};
+	}
+		#{sidebar} h3 span {
+			background: {sbh3bg};
+			border-top: {sbh3borderspan};
+			padding: {sbh3pad};
+		}
+	#{sidebar} ul, #{sidebar} ol {
+		margin: {sblistmarg};
+		line-height: {sblistlh};
+	}
+
+HTML:
+<div id="{container}">
+	<div class="{padding}>
+		<div id="{sidebar}">
+			{item-sidebar}
+		</div>
+	</div>
+</div>

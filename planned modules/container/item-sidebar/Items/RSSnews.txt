@@ -1,0 +1,12 @@
+Name: RSSnews
+Parent: Sidebar/Items
+Functionality: Shows RSS feeds from RSS imports
+Template:
+
+CSS:
+
+
+HTML:
+
+
+LEGEND:

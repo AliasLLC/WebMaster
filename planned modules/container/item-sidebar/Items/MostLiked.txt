@@ -1,0 +1,12 @@
+Name: MostLiked
+Parent: Sidebar/Items
+Functionality: Displays the most liked forum topic
+Template:
+
+CSS:
+
+
+HTML:
+
+
+LEGEND:

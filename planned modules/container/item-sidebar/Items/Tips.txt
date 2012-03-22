@@ -1,0 +1,12 @@
+Name: Tips
+Parent: Sidebar/Items
+Functionality: Gives you tips on things you might not know
+Template:
+
+CSS:
+
+
+HTML:
+
+
+LEGEND:
