@@ -27,6 +27,7 @@
 package com.aliashost.WebMaster.module
 
 import com.aliashost.WebMaster.Kernel
+import play.Logger
 
 trait Module {
 	def onLoad() : Unit
@@ -35,8 +36,8 @@ trait Module {
 	def onDisable() : Unit
 	def setEnabled( enabled : Boolean ) : Unit
 	def isEnabled() : Boolean
-	//def getModuleLoader() : ModuleLoader
-	//def getLogger() : Logger
+	def getModuleLoader() : ModuleLoader
+	def getLogger() : Logger
 	def getDescription() : ModuleDescriptionFile
 	def getKernel() : Kernel
 }

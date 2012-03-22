@@ -29,8 +29,9 @@ package com.aliashost.WebMaster
 import java.io.File
 import play.Logger
 import play.Play
+import com.aliashost.WebMaster.observe.Observer
 
-object WebMaster extends Kernel with System {
+object WebMaster extends Kernel with System with Observer {
 	private val name : String = "WebMaster Core"
 	private val version : String = "0.0.1"
 		

@@ -25,6 +25,31 @@
  */
 
 package com.aliashost.WebMaster.module
+import com.aliashost.WebMaster.exception.InvalidDescriptionFileException
+import com.aliashost.WebMaster.module.LoadOrder
 
-class ModuleDescriptionFile {
+class ModuleDescriptionFile(private var name : String, private var version : String, private var main : String){
+	
+	private var description : String = null
+	private var author : String = null
+	private var authors : List[String] = null
+	private var website : String = null
+	private var reload : Boolean = false
+	private var load : LoadOrder = LoadOrder.STARTUP
+	private var depends : List[String] = null
+	private var softdepends : List[String] = null
+	private var fullname : String = new StringBuilder().append(name).append(" v").append(version).toString()
+	private var protocol : String = null
+	
+	@throws(classOf[InvalidDescriptionFileException])
+	private def load(map : Map[String, Object]) : Unit = {
+		try{
+			name = map.get("name").asInstanceOf[String]
+			
+			if(!name.matches("^[A-Za-z0-9 _.-]+$")){
+				throw new InvalidDescriptionFileException("The field 'name' in )
+			}
+		}
+	}
+  
 }

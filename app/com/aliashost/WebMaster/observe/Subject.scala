@@ -4,12 +4,13 @@ trait Subject {
 	
 	var observer : Observer = null
 	
-	def setObserver( observer : Observer ) = {
+	def setObserver( observer : Observer ) : Boolean = {
 		this.observer = observer
+		return true
 	}
 	
-	def notify() = {
-		observer.update(this)
+	def notify() : Boolean = {
+		return observer.update(this)
 	}
 
 }

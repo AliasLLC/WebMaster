@@ -26,13 +26,17 @@
 
 package com.aliashost.WebMaster.database.filesystem
 
-import com.aliashost.WebMaster.database.Table
-import com.aliashost.WebMaster.database.Database
 import scala.collection.mutable.DoubleLinkedList
-import com.aliashost.WebMaster.database.Entry
 
-class File(file : java.io.File) extends Table{
-	private var entries : DoubleLinkedList[Entry] = null
+import com.aliashost.WebMaster.database.Database
+import com.aliashost.WebMaster.database.Entry
+import com.aliashost.WebMaster.database.Table
+import com.aliashost.WebMaster.observe.Subject
+import com.aliashost.WebMaster.WebMaster
+
+class File(file : java.io.File) extends Table with Subject{
+	
+	private var Entries : DoubleLinkedList[Entry] = new DoubleLinkedList[Entry]()
 	
 	def this(file : String) = this(new java.io.File(file))
 	super.setName(file.getName())
@@ -40,6 +44,8 @@ class File(file : java.io.File) extends Table{
 	super.setOwner(file.canRead() && file.canWrite() && file.canExecute())
 	super.setRead(file.canRead())
 	super.setWrite(file.canWrite())
+	setObserver(WebMaster)
+	notify()
 	
 	def getFile() : java.io.File = {
 		return file
@@ -59,13 +65,52 @@ class File(file : java.io.File) extends Table{
 		if( name.trim() == "" ){
 			return false
 		}
-		var tmp : java.io.File = if (file.getParent() != null) new java.io.File(file.getParent() + name) else new java.io.File(name)
-		if (tmp.exists()){
-			return false
-		}
-		if(file.renameTo(tmp)){
+		if(notify()){
 			super.setName(name)
 			return true
+		}
+		return false
+	}
+	
+	override def setDatabase(database : Database) : Boolean = {
+		var set = super.setDatabase(database)
+		notify()
+		return set
+	}
+	
+	override def setOwner(owner : Boolean) : Unit = {
+		super.setOwner(owner)
+		notify()
+	}
+	
+	override def setRead(read : Boolean) : Unit = {
+		super.setRead(read)
+		notify()
+	}
+	
+	override def setWrite(write : Boolean) : Unit = {
+		super.setWrite(write)
+		notify()
+	}
+	
+	def addEntry(entry : Entry) : Boolean = {
+		Entries.+:(entry)
+		return notify()
+	}
+	
+	def getEntries() : Array[Entry] = {
+		return Entries.asArray()
+	}
+	
+	def dropEntry(entry : Entry) : Boolean = {
+		for(e <- Entries){
+			if(e.eq(entry)){
+				//I don't know if a for loop increments the list's internal counter if not we'll
+				//have to do it manually using next's.
+				Entries.remove()
+				notify()
+				return true
+			}
 		}
 		return false
 	}
