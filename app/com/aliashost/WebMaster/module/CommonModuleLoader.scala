@@ -25,31 +25,34 @@
  */
 
 package com.aliashost.WebMaster.module
-import com.aliashost.WebMaster.exception.InvalidDescriptionFileException
-import com.aliashost.WebMaster.module.LoadOrder
 
-class ModuleDescriptionFile(private var name : String, private var version : String, private var main : String){
+import org.spout.api.UnsafeMethod
+import com.aliashost.WebMaster.module.security.CommonSecurityManager
+import com.aliashost.WebMaster.Kernel
+import scala.collection.mutable.HashMap
+import java.util.regex.Pattern
+
+class CommonModuleLoader(protected final val kernel : Kernel, private final val manager : CommonSecurityManager, private final val key : Double) extends ModuleLoader {
+
+	private final val patterns : Array[Pattern] = Array[Pattern] {Pattern.compile("//.jar$")}
+	private final var loader : CommonClassLoader = null
+	private final val classes : HashMap[String, Class[_]] = new HashMap[String, Class[_]]()
+	private final val loaders : HashMap[String, CommonClassLoader] = new HashMap[String, CommonClassLoader]()
 	
-	private var description : String = null
-	private var author : String = null
-	private var authors : List[String] = null
-	private var website : String = null
-	private var reload : Boolean = false
-	private var load : LoadOrder = LoadOrder.STARTUP
-	private var depends : List[String] = null
-	private var softdepends : List[String] = null
-	private var fullname : String = new StringBuilder().append(name).append(" v").append(version).toString()
-	private var protocol : String = null
+	def getPatterns() : Array[Pattern] = {
+		return patterns
+	}
 	
-	@throws(classOf[InvalidDescriptionFileException])
-	private def load(map : Map[String, Object]) : Unit = {
-		try{
-			name = map.get("name").asInstanceOf[String]
-			
-			if(!name.matches("^[A-Za-z0-9 _.-]+$")){
-				throw new InvalidDescriptionFileException("The field 'name' in )
+	@UnsafeMethod
+	def enableModule(paramModule : Module) = {
+		synchronized{
+			if(!classOf[CommonModule].isAssignableFrom(paramModule.getClass)){
+				throw new IllegalArgumentException("Cannot enable module with this ModuleLoader as it is of the wrong type!")
+			}
+			if(!paramModule.isEnabled){
+				val cp = paramModule.asInstanceOf[CommonModule]
+				val name = cp.getDescription()
 			}
 		}
 	}
-  
 }

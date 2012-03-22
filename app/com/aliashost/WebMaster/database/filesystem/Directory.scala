@@ -29,34 +29,37 @@ package com.aliashost.WebMaster.database.filesystem
 import com.aliashost.WebMaster.database.Database
 import com.aliashost.WebMaster.database.Table
 import scala.collection.mutable.DoubleLinkedList
+import com.aliashost.WebMaster.observe.Subject
+import com.aliashost.WebMaster.WebMaster
+import org.spout.api.UnsafeMethod
 
-class Direcotry(Dir : java.io.File) extends Database{
+class Directory(Dir : java.io.File) extends Database with Subject{
 	
-	private var tables : DoubleLinkedList[Table] = null
+	private var Parent : Database = null
+	private var Databases = new DoubleLinkedList[Database]()
+	setName(Dir.getName())
+	setObserver(WebMaster)
 	
 	for(file <- Dir.listFiles()) {
-		var tmp = new File(file)
-		if( tables == null ) {
-			tables = new DoubleLinkedList[Table]()
+		if( file.isFile() ){
+			val tmp = new File(file)
+			addTable(tmp)
 		}
-		tables.+:(tmp)
+		else if( file.isDirectory() ){
+			val tmp = new Directory(file)
+			addDatabase(tmp)
+		}
 	}
+	
+	notify()
 	
 	def this(Dir : String) = this(new java.io.File(Dir))
-	
-	override def getName() : String = {
-		return Dir.getName();
-	}
 	
 	override def setName(name : String) : Boolean = {
 		if( name.trim() == "" ){
 			return false
 		}
-		var tmp : java.io.File = if (Dir.getParent() != null) new java.io.File(Dir.getParent() + name) else new java.io.File(name)
-		if (tmp.exists()){
-			return false
-		}
-		if(Dir.renameTo(tmp)){
+		if(notify()){
 			super.setName(name)
 			return true
 		}
@@ -64,10 +67,68 @@ class Direcotry(Dir : java.io.File) extends Database{
 	}
 	
 	override def addTable(table : Table) : Boolean = {
-		if(table.getName().trim() == ""){
+		if(table.getName().trim() == "" || !table.isInstanceOf[File]){
 			return false
 		}
-		val file : File = table.asInstanceOf[File];
+		super.addTable(table)
+		notify()
+		return true
+	}
+	
+	override def dropTable(table : Table, strict : Boolean = true) : Boolean = {
+		val dropped = super.dropTable(table, strict)
+		notify()
+		return dropped
+	}
+	
+	def addDatabase(dat : Database) : Boolean = {
+		if(dat.getName().trim() == "" || !dat.isInstanceOf[Directory]){
+			return false
+		}
+		for(d <- Databases){
+			if(d.eq(dat) || d.getName() == getName()){
+				return false
+			}
+		}
+		dat.asInstanceOf[Directory].setDatabase(this)
+		Databases.+:(dat)
+		notify()
+		return true
+	}
+	
+	def getDatabase(name : String) : Database = {
+		for(dat <- Databases){
+			if(dat.getName() == name){
+				return dat
+			}
+		}
+		return null
+	}
+	
+	@UnsafeMethod
+	def setDatabase( database : Database ) : Boolean = {
+		if(database.eq(Parent)){
+			return false
+		}
+		Parent = database
+		notify()
+		return true
+	}
+	
+	def getDatabases() : Array[Database] = {
+		return Databases.toArray
+	}
+	
+	def dropDatabase(dat : Database, strict : Boolean = true) : Boolean = {
+		for(d <- Databases){
+			if(d.eq(dat) || ( !strict && d.getName() == dat.getName() ) ){
+				//I don't know if a for loop increments the list's internal counter if not we'll
+				//have to do it manually using next's.
+				Databases.remove()
+				notify()
+				return true
+			}
+		}
 		return false
 	}
 	

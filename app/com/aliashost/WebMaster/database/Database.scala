@@ -31,7 +31,7 @@ trait Database {
 	
 	private var Name : String = null 
 	
-	private var Tables : DoubleLinkedList[Table] = null
+	private var Tables : DoubleLinkedList[Table] = new DoubleLinkedList[Table]
 	
 	def getName() : String = {
 		return Name
@@ -56,7 +56,6 @@ trait Database {
 			}
 		}
 		return null
-		
 	}
 	
 	def addTable(table : Table) : Boolean = {

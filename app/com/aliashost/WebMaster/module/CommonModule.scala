@@ -27,16 +27,17 @@
 package com.aliashost.WebMaster.module
 
 import org.spout.api.UnsafeMethod
-
+import com.aliashost.WebMaster.database.filesystem.Directory
 import com.aliashost.WebMaster.Kernel
+import play.Logger
 
 abstract class CommonModule extends Module{
 	private var description : ModuleDescriptionFile = null
 	private var kernel : Kernel = null
 	private var enabled : Boolean = false
-	//private var template : TemplateFolder
-	//private var moduleLoader : CommonModuleLoader
-	//private var classLoader : CommonClassLoader
+	private var template : Directory = null
+	private var moduleLoader : CommonModuleLoader = null
+	private var classLoader : CommonClassLoader = null
 
 	@UnsafeMethod
 	override def onEnable() : Unit
@@ -60,36 +61,36 @@ abstract class CommonModule extends Module{
 		this.enabled = enabled
 	}
 
-	//override final def getModuleLoader() : ModuleLoader = {
-	//	return moduleLoader
-	//}
+	override final def getModuleLoader() : ModuleLoader = {
+		return moduleLoader
+	}
 
-	//override final def getLogger() : Logger = {
-	//	return kernel().getLogger()
-	//}
+	override final def getLogger() : Logger = {
+		return kernel.getLogger()
+	}
 
 	override final def getDescription() : ModuleDescriptionFile = {
 		return description
 	}
 
-	//override final def getKernel() : Kernel = {
-	//	return kernel
-	//}
+	override final def getKernel() : Kernel = {
+		return kernel
+	}
 
-	//final def initialize( modLoader : CommonModuleLoader, kernel : Kernel, desc : ModuleDescriptionFile, template : TemplateFolder, loader : CommonClassLoader) : Unit = {
-	//	moduleLoader = modLoader
-	//	classLoader = loader
-	//	this.kernel = kernel
-	//	description = desc
-	//	this.template = template
-	//}
+	final def initialize( modLoader : CommonModuleLoader, kernel : Kernel, desc : ModuleDescriptionFile, template : Directory, loader : CommonClassLoader) : Unit = {
+		moduleLoader = modLoader
+		classLoader = loader
+		this.kernel = kernel
+		description = desc
+		this.template = template
+	}
 
-	//final def getClassLoader() : ClassLoader = {
-	//	return classLoader
-	//}
+	final def getClassLoader() : ClassLoader = {
+		return classLoader
+	}
 
-	//final def getTemplateFolder() : TemplateFolder = {
-	//	return template
-	//}
+	final def getTemplateFolder() : Directory = {
+		return template
+	}
 
 }

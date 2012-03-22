@@ -23,10 +23,32 @@
  * License and see <http://www.aliashost.com/AliasLicenseVersion_1.txt> for the full license,
  * including the MIT license.
  */
-package com.aliashost.WebMaster.database.filesystem
 
-class UTF8Entry(private var Name : String,private var Value : String = "") extends TextEntry{
-	Value = new String(Value.getBytes("US-ASCII"))
-	setName(Name)
-	setValue(Value)
+package com.aliashost.WebMaster.module
+
+import java.io.File
+import java.util.regex.Pattern
+
+import com.aliashost.WebMaster.exception.InvalidDescriptionFileException
+import com.aliashost.WebMaster.exception.InvalidPluginException
+import com.aliashost.WebMaster.exception.UnknownDependencyException
+
+trait ModuleLoader {
+	
+	def getPatterns() : Array[Pattern]
+	
+	def enableModule(paramModule : Module)
+	
+	def disableModule(paramModule : Module)
+	
+	@throws(classOf[InvalidPluginException])
+	@throws(classOf[UnknownDependencyException])
+	@throws(classOf[InvalidDescriptionFileException])
+	def loadModule(paramFile : File)
+	
+	@throws(classOf[InvalidPluginException])
+	@throws(classOf[UnknownDependencyException])
+	@throws(classOf[InvalidDescriptionFileException])
+	def loadModule(paramFile : File, paramBoolean : Boolean)
+
 }

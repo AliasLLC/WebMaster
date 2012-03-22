@@ -23,10 +23,9 @@
  * License and see <http://www.aliashost.com/AliasLicenseVersion_1.txt> for the full license,
  * including the MIT license.
  */
-package com.aliashost.WebMaster.database.filesystem
 
-class UTF8Entry(private var Name : String,private var Value : String = "") extends TextEntry{
-	Value = new String(Value.getBytes("US-ASCII"))
-	setName(Name)
-	setValue(Value)
+package com.aliashost.WebMaster.module
+
+class CommonModuleDescriptionFile extends ModuleDescriptionFile {
+
 }

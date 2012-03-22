@@ -23,10 +23,31 @@
  * License and see <http://www.aliashost.com/AliasLicenseVersion_1.txt> for the full license,
  * including the MIT license.
  */
-package com.aliashost.WebMaster.database.filesystem
 
-class UTF8Entry(private var Name : String,private var Value : String = "") extends TextEntry{
-	Value = new String(Value.getBytes("US-ASCII"))
-	setName(Name)
-	setValue(Value)
+package com.aliashost.WebMaster.module
+
+import org.spout.api.plugin.PluginStore.DownloadEventDelegate
+
+trait ModuleStore {
+
+	def downloadAddon(databaseId : Int, delegate : DownloadEventDelegate) : Unit
+
+	def downloadAddon(name : String, delegate : DownloadEventDelegate) : Unit
+
+	def hasUpdate(addon : Module) : Boolean
+
+	def hasInternetAccess(addon : Module) : Boolean
+
+	def getQuota(addon : Module) : Long
+
+	def isEnabled(addon : Module) : Boolean
+	
+	trait DownloadEventDelegate {
+		
+		def onDownloadFinished(addon : Module) : Unit
+
+		def onDownloadFailure(e : Exception, databaseId : Int, name : String) : Unit
+		
+	}
+	
 }

@@ -23,10 +23,28 @@
  * License and see <http://www.aliashost.com/AliasLicenseVersion_1.txt> for the full license,
  * including the MIT license.
  */
-package com.aliashost.WebMaster.database.filesystem
 
-class UTF8Entry(private var Name : String,private var Value : String = "") extends TextEntry{
-	Value = new String(Value.getBytes("US-ASCII"))
-	setName(Name)
-	setValue(Value)
+package com.aliashost.WebMaster.exception
+
+object InvalidDescriptionFileException{
+	private val serialVersionUID : Long = 15604205322165L
+}
+
+class InvalidDescriptionFileException(private val message : String, private val cause : Throwable) extends Exception {
+	
+	def this(cause : Throwable) = this("Invalid module File", cause)
+
+	def this(message : String) = this(message, null)
+
+	def this() = this("Invalid module File", null)
+
+	@Override
+	def getCause() : Throwable = {
+		return cause
+	}
+
+	@Override
+	def getMessage() : String = {
+		return message
+	}
 }

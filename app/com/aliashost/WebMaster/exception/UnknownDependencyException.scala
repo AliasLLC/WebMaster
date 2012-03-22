@@ -23,10 +23,28 @@
  * License and see <http://www.aliashost.com/AliasLicenseVersion_1.txt> for the full license,
  * including the MIT license.
  */
-package com.aliashost.WebMaster.database.filesystem
 
-class UTF8Entry(private var Name : String,private var Value : String = "") extends TextEntry{
-	Value = new String(Value.getBytes("US-ASCII"))
-	setName(Name)
-	setValue(Value)
+package com.aliashost.WebMaster.exception
+
+object UnknownDependencyException{
+	private val serialVersionUID : Long = 65432165579899L
+}
+
+class UnknownDependencyException(private val message : String, private val cause : Throwable) extends Exception {
+	
+	def this(cause : Throwable) = this("Unknown Dependency", cause)
+
+	def this(message : String) = this(message, null)
+
+	def this() = this("Unknown Dependency", null)
+
+	@Override
+	def getCause() : Throwable = {
+		return cause
+	}
+
+	@Override
+	def getMessage() : String = {
+		return message
+	}
 }
