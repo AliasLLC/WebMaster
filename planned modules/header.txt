@@ -1,0 +1,173 @@
+Name: Header
+Parent:
+Functionality: holds the main image, credits and karma
+
+TEMPLATE:
+
+CSS:
+
+#{header}
+{
+	border-top: {hborder}
+	background: {hbg};
+	height: {hheight};
+	padding: {hpad};
+}
+#{header} .{img}
+{
+	background-image: url({bgimglink});
+}
+.{padding}
+{
+	margin: {padmarg};
+	width: {padwidth};
+}
+#{user}
+{
+	text-align: {usertalign};
+	margin: {usermarg};
+	width: {userwidth};
+	text-shadow: {userts};
+}
+.{float}
+{
+	float: {floatdi};
+}
+#{logo}
+{
+	width: {logowidth};
+	height: {logoheight};
+	background: {logobg};
+	opacity: {logoopac};
+	filter: alpha(opacity={filtopamount});
+}
+#{logo}:hover
+{
+	opacity: {oamount};
+	filter: alpha(opacity={hoverfiltopamount});
+}
+#{header} #{logo} a
+{
+	outline: {aoutline};
+	border: {aborder};
+}
+.{fill}
+{
+	display: {filldis};
+	height: {fheight};
+	width: {fwidth};
+}
+
+HTML:
+
+<div id="{header}" class="{img}">
+		<div class="{padding}">
+			<div id="{user}" class="{float}">
+				<img src="{userava}" title="{usertitle}" alt="{altusertitle}" class="{float}" />
+				<h5>{usertitle}</h5>
+				<ul>
+				<li>{creditamount}</li>
+				<li>{userrating}</li>
+				</ul>			
+			</div>			
+		<div id="{logo}">
+			<a href="{homelink}" title="{hometitle}" class="{fill}"></a>
+		</div>
+	</div>
+</div>
+
+LEGEND:
+
+Div Id:
+	{header}
+		Id for the header.
+	{user}
+		Id for the user.
+	{logo}
+		Id for the site logo
+
+Classes:
+	{img}
+		Class for an image inside the header.
+	{padding}
+		Class for padding.
+	{fill}
+		Class for fill options
+	{float}
+		Defines the float class
+
+Div Id variables:
+	{header}		
+		{hborder}
+			Used to state if the header has a border.
+		{hbg}
+			Header background.
+		{hheight}
+			Height for the header.
+		{hpad}
+			The padding used for the header.
+	{user}
+		{usertalign}
+			The direction that the text aligns.
+		{usermarg}
+			The margin specifications for the user Id.
+		{userwidth}
+			Width restrictions for user Id.
+		{userts}
+			States if text has shadow effect
+	{logo}
+		{logowidth}
+			Width restrictions for logo Id
+		{logoheight}
+			Height restrictions for logo Id
+		{logobg}
+			Specifications for logo background
+		{logoopac}
+			Opacity for logo
+		{filtopamount}
+			Amount of opacity.
+	{logo}:hover
+		{oamount}
+			Opacity type on logo hover.
+		{hoverfiltopamount}
+			Opacity amount on logo hover.
+	{header} {logo} a
+		{aoutline}
+			Outline for anchors.
+		{aborder}
+			Defines a border for an anchor
+			
+Class variables:
+	{img}
+		{bgimglink}
+			The location of the image used for the header.
+	{padding}
+		{padmarg}
+			The margin specifications for the padding class.
+		{padwidth}
+			The width for padding class.
+	{float}
+		{floatdi}
+			Direction of float
+	{fill}
+		{filldisplay}
+			How to display fill class
+		{fheight}
+			Height for fill
+		{fwidth}
+			Width for fill
+HTML variables:
+	{userava}
+		The users avatar image location.
+	{usertitle}
+		In most casses the users name.
+	{altusertitle}
+		An alternate to the normal user title.
+	{creditamount}
+		The number of credits that a user has.
+	{userrating}
+		How many likes and dislikes the user has.
+	{homelink}
+		The link direction for the logo.
+	{hometitle}
+		Title displayed while hovered over the logo.

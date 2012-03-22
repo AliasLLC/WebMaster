@@ -1,0 +1,9 @@
+Name: Content
+Parent:
+Functionality: Displays items
+Template:
+
+CSS:
+#{content} {
+	padding: {contentpad};
+}
