@@ -1,14 +1,12 @@
 import sbt._
 import Keys._
-
 import PlayProject._
 
 object ApplicationBuild extends Build {
 
     val appName         = "WebMaster"
-    val appVersion      = "0.0.0"
+    val appVersion      = "1.0-SNAPSHOT"
 
-    
     val appDependencies = Seq(
       // Add your project dependencies here,
     )
