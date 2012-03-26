@@ -99,7 +99,7 @@ class File(file : java.io.File) extends Table with Subject{
 	}
 	
 	def getEntries() : Array[Entry] = {
-		return Entries.asArray()
+		return Entries.toArray
 	}
 	
 	def dropEntry(entry : Entry) : Boolean = {
