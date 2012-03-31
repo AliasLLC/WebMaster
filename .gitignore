@@ -1,2 +1,9 @@
+.classpath
+.directory
+.project
 
-/forums
+.settings/
+.git/
+
+eclipse/
+tmp/
