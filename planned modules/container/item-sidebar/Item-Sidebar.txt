@@ -1,0 +1,17 @@
+
+
+CSS:
+.{item-sidebar} {
+	margin: {isidebarmarg};
+	background: {isidebarbg};
+	padding: {isidebarpad};
+}
+
+HTML:
+<div id="{container}">
+	<div id="{sidebar}">
+		<div class="{item-sidebar}">
+			{Items}
+		</div>
+	</div>
+</div>

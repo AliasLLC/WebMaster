@@ -1,0 +1,5 @@
+Name: Menu
+Purpose: Provide users with an interface that contains links to both internal and external webpages
+Items:
+	MenuBar
+	MenuItem

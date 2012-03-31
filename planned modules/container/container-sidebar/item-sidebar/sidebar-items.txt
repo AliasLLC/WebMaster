@@ -1,0 +1,22 @@
+Name: sidebar-items
+Parent: container/container-sidebar/item-sidebar
+Functionality: Sets sidebar layout properties
+Template:
+
+CSS:
+.{item-sidebar} {
+	margin: {isidebarmarg};
+	background: {isidebarbg};
+	padding: {isidebarpad};
+}
+
+HTML:
+<div id="{container}">
+	<div class="{padding}>
+		<div id="{sidebar}">
+			<div class="{item-sidebar}">
+				{items}
+			</div>
+		</div>
+	</div>
+</div>

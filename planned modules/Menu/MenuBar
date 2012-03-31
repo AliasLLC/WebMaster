@@ -1,0 +1,44 @@
+Name: MenuBar
+Parent: Menu
+Functionality: Container containing MenuItems and other widgets
+Template:
+	CSS:
+		.{menuclass} {
+			margin: {margin};
+			width: {width};
+		}
+		#{menuid} {
+			background: {background};
+			border-bottom: {bottomborder};
+		}
+		#{menuid} ul {
+			list-style: none;
+		}
+	
+	HTML:
+		<div id="{menuid}">
+			<div class="{menuclass}">
+				<ul>
+					{menuitems}
+				</ul>
+				{widgets}
+			</div>
+		</div>
+		
+Legend:
+	{menuclass}
+		The CSS Class that identifies the menu
+	{menuid}
+		The ID that identifies the menu
+	{menuitems}
+		Items contained in the menu
+	{widgets}
+		Widgets contained in the menu
+	{margin}
+		Menu's margin
+	{width}
+		Menu's width
+	{background}
+		Menu's background
+	{bottomborder}
+		Menu's bottom border

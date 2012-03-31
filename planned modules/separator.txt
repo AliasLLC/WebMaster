@@ -1,0 +1,25 @@
+Name: Seperator
+Parent:
+Functionality: Adds a seperator
+Template:
+
+CSS:
+	.{separator}
+	{
+		background: {background};
+		height: {height};
+		width: {width};
+	}
+
+HTML:
+<div class="{separator}"></div>
+
+Legend:
+	{separator}
+		The separator class
+	{background}
+		Separator background style
+	{height}
+		Height of separator class
+	{width}
+		Width of separator class

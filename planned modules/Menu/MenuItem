@@ -1,0 +1,59 @@
+Name: MenuItem
+Parent: Menu
+Functionality: Link that redirects user to internal or external page
+Template:
+	CSS:
+		#{menuid} ul li {
+			display: inline;
+			margin: {margin};
+		}
+		#{menuid} ul li a {
+			font-family: {font};
+			font-size: {size};
+			text-transform: {transform};
+			text-decoration: {decoration};
+			font-weight: {weight};
+			padding: {padding};
+			display: inline-block;
+			color: {color};
+			text-shadow: {shadow};
+			border: {border};
+		}
+		#{menuid} ul li a:hover {
+			background: {hoverbackground;
+			color: {hovercolor};
+		}
+		#{menuid} ul li.{selectedclass} a {
+			background: {selectedbackground};
+			color: {selectedcolor};
+		}
+	
+	HTML:
+		Selected:
+			<li class="{selectedclass}">
+				<a href="{link}" title="{title}">{title}</a>
+			</li>
+		Non-Selected:
+			<li>
+				<a href="{link}" title="{title}">{title}</a>
+			</li>
+		
+Legend:
+	{menuid}
+	{margin}
+	{font}
+	{size}
+	{transform}
+	{decoration}
+	{weight}
+	{padding}
+	{color}
+	{shadow}
+	{border}
+	{hoverbackground}
+	{hovercolor}
+	{selectedclass}
+	{selectedbackground}
+	{selectedcolor}
+	{link}
+	{title}
