@@ -8,7 +8,7 @@
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * In addition, 360 days after any changes are published, you can use the
+ * In addition, 365 days after any changes are published, you can use the
  * software, incorporating those changes, under the terms of the MIT license,
  * as described in the Alias License Version 1.
  *
